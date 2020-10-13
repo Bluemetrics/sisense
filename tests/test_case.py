@@ -5,7 +5,7 @@ import unittest
 class TestCase(unittest.TestCase):
 
     def setUp(self):
-        with open('tests/api_credentials', 'r') as file:
+        with open('tests/support_files/api_credentials', 'r') as file:
             host = file.readline().replace('\n', '')
             token = file.readline().replace('\n', '')
 
