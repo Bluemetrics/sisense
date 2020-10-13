@@ -11,6 +11,7 @@ class Resource:
         :param api: (API) Used to make API's requests.
         :param rjson: (dict) Resource representation.
         """
+        # If you add a new attribute, always remember to include it on __setattr__
         self._api = api
         self._json = rjson if rjson else {}
 
@@ -33,10 +34,19 @@ class Resource:
             json.dump(self.json, file)
 
     def __setattr__(self, key, value):
-        self._json[key] = value
+        if key in self.__dict__ or key in ['_json', '_api']:
+            self.__dict__[key] = value
+        else:
+            self.__dict__['_json'][key] = value
 
     def __getattr__(self, item):
-        return self._json.get(item, None)
+        if item in self.__dict__:
+            return self.__dict__[item]
+
+        if item in self.__dict__['_json']:
+            return self.__dict__['_json'][item]
+
+        raise AttributeError(f'"{item}" does not exist in {type(self)}.')
 
     def __repr__(self):
         return str(self.json)
