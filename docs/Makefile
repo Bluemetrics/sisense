@@ -7,6 +7,7 @@ SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
+PACKAGEDIR    = ../sisense
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -18,3 +19,6 @@ help:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+api-doc:
+	 sphinx-apidoc -f -o "$(SOURCEDIR)" "$(PACKAGEDIR)"
