@@ -1,12 +1,9 @@
 from sisense.data import Datamodel, Build
-from sisense import Sisense
+from .test_case import TestCase
 import unittest
 
 
-class SisenseTestCase(unittest.TestCase):
-
-    def setUp(self):
-        self.sisense = Sisense('test_host', 'test_token')
+class SisenseTestCase(TestCase):
 
     def test_datamodel(self):
         datamodel = self.sisense.datamodel
