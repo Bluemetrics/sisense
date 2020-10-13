@@ -1,5 +1,4 @@
 # sisense
-[![Build Status](https://travis-ci.com/Bluemetrics/sisense.svg?branch=master)](https://travis-ci.com/Bluemetrics/sisense)
 [![Documentation Status](https://readthedocs.org/projects/sisense/badge/?version=latest)](https://sisense.readthedocs.io/en/latest/?badge=latest)
 
 Python interface for Sisense API.
