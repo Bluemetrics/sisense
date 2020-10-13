@@ -1,1 +1,1 @@
-from .sisense_api import Sisense
+from .sisense_client import Sisense
