@@ -119,27 +119,29 @@ class API:
             with open(filepath, 'wb') as file:
                 [file.write(chunk) for chunk in response.iter_content(chunk_size=None, decode_unicode=True) if chunk]
 
-    def upload(self, uri: str, file: IO, query: dict = None, headers: dict = None):
+    def upload(self, uri: str, file: dict, query: dict = None, headers: dict = None):
         """
         Upload a file.
 
         :param uri: (str) Resource identifier.
-        :param file: (IO) file-like-object File to be uploaded.
+        :param file: (dict) {key: file-like-object File to be uploaded}.
         :param query: (dict, default None) GET query parameters.
         :param headers: (dict, default None) Request headers.
         """
         path = self.url(uri)
         headers = self._headers(headers)
         headers.update({'Accept': '*/*'})
+        headers.update({'Content-type': 'multipart/form-data'})
 
-        response = requests.post(path, data=file, params=query, headers=headers)
+        response = requests.post(path, files=file, params=query, headers=headers)
         self._handle_request_error(response)
 
     def _headers(self, other: dict) -> dict:
-        headers = {'authentication': self._token} if self._token else {}
+        headers = {'authorization': self._token} if self._token else {}
 
         headers.update(other if other else {})
         headers.update({'Accept': 'application/json'})
+        headers.update({'Content-type': 'application/json'})
 
         return headers
 
@@ -150,7 +152,7 @@ class API:
         response = requests.request(method, path, **kwargs)
         self._handle_request_error(response)
 
-        content = response.json()
+        content = response.json() if len(response.text) else {}
         return content
 
     def _handle_request_error(self, response):

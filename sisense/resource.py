@@ -13,15 +13,7 @@ class Resource:
         """
         # If you add a new attribute, always remember to include it on __setattr__
         self._api = api
-        self._json = rjson if rjson else {}
-
-    @property
-    def json(self) -> dict:
-        return self._json
-
-    @json.setter
-    def json(self, other):
-        self._json = dict(other)
+        self.json = rjson if rjson else {}
 
     def save(self, filepath: str):
         """
@@ -34,7 +26,7 @@ class Resource:
             json.dump(self.json, file)
 
     def __setattr__(self, key, value):
-        if key in self.__dict__ or key in ['_json', '_api']:
+        if key in self.__dict__ or key in ['json', '_api']:
             self.__dict__[key] = value
         else:
             self.__dict__['_json'][key] = value
@@ -43,8 +35,8 @@ class Resource:
         if item in self.__dict__:
             return self.__dict__[item]
 
-        if item in self.__dict__['_json']:
-            return self.__dict__['_json'][item]
+        if item in self.__dict__['json']:
+            return self.__dict__['json'][item]
 
         raise AttributeError(f'"{item}" does not exist in {type(self)}.')
 

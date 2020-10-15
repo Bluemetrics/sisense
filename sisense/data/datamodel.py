@@ -22,7 +22,6 @@ class Datamodel(Resource):
         else:
             query = {'title': title, 'limit': 1}
             content = self._api.get('datamodels/schema', query=query)
-            content = content[0]
 
         return Datamodel(self._api, content)
 
@@ -88,11 +87,11 @@ class Datamodel(Resource):
         self._upload_full(title, filepath) if full else self._upload_schema(title, filepath)
         return self.get(title=title)
 
-    def start_build(self, build_type: str = 'schema_changes', row_limit: int = 0) -> Resource:
+    def start_build(self, build_type: str = 'schema_changes', row_limit: int = None) -> Resource:
         """
         Start a build task for this datamodel.
 
-        :param build_type: (str, default 'schema_changes') Type of build. Possible values: schema_changes, replace_all
+        :param build_type: (str, default 'schema_changes') Type of build. Possible values: schema_changes, by_table, full
         :param row_limit: (int) Row limit.
 
         :return: (Build) Build task created.
@@ -101,7 +100,8 @@ class Datamodel(Resource):
 
     def stop_builds(self):
         """Cancel/stop all running build tasks for this Datamodel."""
-        Build(self._api).stop_all(self.oid)
+        builds = Build(self._api).tasks(self.oid, Build.BUILDING)
+        [build.stop() for build in builds]
 
     def _download_schema(self, filepath: str):
         query = {'datamodelId': self.oid, 'type': 'schema-latest'}
@@ -118,16 +118,12 @@ class Datamodel(Resource):
         with open(filepath, 'r') as file:
             schema = json.load(file)
 
-        schema['title'] = title
         query = {'newTitle': title}
-        data = {'Body': schema}
-
-        self._api.post('datamodel-imports/schema', data=data, query=query)
+        self._api.post('datamodel-imports/schema', data=schema, query=query)
 
     def _upload_full(self, title: str, filepath: str):
         query = {'newTitle': title}
-
-        with open(filepath, 'rb') as file:
-            self._api.upload('datamodel-imports/stream/full', file=file, query=query)
+        data = {'fileToUpload': open(filepath, 'rb')}
+        self._api.upload('datamodel-imports/stream/full', file=data, query=query)
 
 
