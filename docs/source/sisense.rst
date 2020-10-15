@@ -38,10 +38,10 @@ sisense.resource module
    :undoc-members:
    :show-inheritance:
 
-sisense.sisense module
-----------------------
+sisense.sisense\_client module
+------------------------------
 
-.. automodule:: sisense.sisense
+.. automodule:: sisense.sisense_client
    :members:
    :undoc-members:
    :show-inheritance:
