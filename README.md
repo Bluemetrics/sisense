@@ -25,3 +25,8 @@ build = new_datamodel.start_build('replace_all')
 build.stop()  # or new_datamodel.stop_builds() to stop all builds 
 
 ```
+
+## Testing
+```
+make api-test
+```
