@@ -10,7 +10,6 @@ $ pip install -i https://test.pypi.org/simple/ sisense
 ```
 
 ## Install
-Not available **yet**.
 ```shell script
 $ pip install sisense
 ```
@@ -25,7 +24,7 @@ datamodel = sisense.datamodel
 new_datamodel = datamodel.clone('Datamodel copy')
 
 build = new_datamodel.start_build('replace_all')
-build.stop()  # or new_datamodel.stop_builds() to stop all builds 
+build.stop() 
 
 ```
 
