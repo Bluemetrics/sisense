@@ -21,4 +21,5 @@ help:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 api-doc:
+	cp ../README.md source/
 	 sphinx-apidoc -f -o "$(SOURCEDIR)" "$(PACKAGEDIR)"
