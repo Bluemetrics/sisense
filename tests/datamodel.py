@@ -1,5 +1,4 @@
-from .test_case import TestCase
-from time import sleep
+from .test_case import TestCaseV2 as TestCase
 import unittest
 import requests
 import json
@@ -10,24 +9,14 @@ class DatamodelTestCase(TestCase):
 
     def setUp(self):
         super(DatamodelTestCase, self).setUp()
-        self.datamodel = self.sisense.datamodel.get(oid='893d2d14-e73c-4864-aced-0f7360c4be85')
+        self.datamodel = self.sisense.datamodel.get(oid=self.config['datamodel.oid'])
 
     def test_get_by_id(self):
-        datamodel = self.datamodel.get(oid='893d2d14-e73c-4864-aced-0f7360c4be85')
-        self.assertEqual(datamodel.title, 'SisenseAPI Example')
+        self.assertEqual(self.datamodel.title, self.config['datamodel'])
 
     def test_get_by_name(self):
-        datamodel = self.datamodel.get(title='SisenseAPI Example')
-        self.assertEqual(datamodel.oid, '893d2d14-e73c-4864-aced-0f7360c4be85')
-
-    def test_get_builds(self):
-        for status in ['pending', 'building', 'done', 'failed', 'cancelled']:
-            with self.subTest(status=status):
-                builds = self.datamodel.get_builds(status)
-                self.assertEqual(type(builds), list)
-
-                for b in builds:
-                    self.assertEqual(b.status, status)
+        datamodel = self.datamodel.get(title=self.config['datamodel'])
+        self.assertEqual(datamodel.oid, self.config['datamodel.oid'])
 
     def test_create(self):
         title = 'SisenseAPI (New) Example'
@@ -103,48 +92,6 @@ class DatamodelTestCase(TestCase):
 
             new_datamodel.delete()
             os.system(f'rm {filename}')
-
-    def test_start_build(self):
-        build_types = ['full', 'schema_changes', 'by_table']
-
-        for bt in build_types:
-            with self.subTest(build_type=bt):
-                datamodel = self.datamodel.get(title='ujk3z02fkh_renovation_tracker')
-                build = datamodel.start_build(bt)
-
-                self.assertEqual(build.buildType, bt.replace('_', '-'))
-                self.assertEqual(build.datamodelId, datamodel.oid)
-
-                while not build.is_finished():
-                    sleep(2)
-                    build.update()
-
-    def test_stop_builds(self):
-        datamodel = self.datamodel.get(title='ujk3z02fkh_renovation_tracker')
-        build = datamodel.start_build('full')
-
-        while not build.is_building():
-            sleep(2)
-            build.update()
-
-        sleep(10)
-        build.stop()
-        sleep(4)
-        self.assertTrue(build.was_cancelled())
-
-    def test_stop_all_builds(self):
-        datamodel = self.datamodel.get(title='ujk3z02fkh_renovation_tracker')
-        build = datamodel.start_build('full')
-
-        while not build.is_building():
-            sleep(2)
-            build.update()
-
-        sleep(10)
-        datamodel.stop_builds()
-        sleep(4)
-        build.update()
-        self.assertTrue(build.was_cancelled())
 
 
 if __name__ == '__main__':

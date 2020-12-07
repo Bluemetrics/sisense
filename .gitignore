@@ -133,4 +133,4 @@ dmypy.json
 
 # IDE junk
 .idea*
-tests/support_files/api_credentials
+tests/support_files/

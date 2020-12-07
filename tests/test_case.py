@@ -1,12 +1,29 @@
 from sisense import Sisense
 import unittest
+import json
 
 
-class TestCase(unittest.TestCase):
+def _load_config(version: str) -> dict:
+    with open(f'tests/support_files/config/api_{version}.json', 'r') as file:
+        return json.load(file)
+
+
+class TestCaseV09(unittest.TestCase):
 
     def setUp(self):
-        with open('tests/support_files/api_credentials', 'r') as file:
-            host = file.readline().replace('\n', '')
-            token = file.readline().replace('\n', '')
+        self.config = _load_config('v09')
+        self.sisense = Sisense(self.config['host'], self.config['token'])
 
-        self.sisense = Sisense(host, token)
+
+class TestCaseV1(unittest.TestCase):
+
+    def setUp(self):
+        self.config = _load_config('v1')
+        self.sisense = Sisense(self.config['host'], self.config['token'])
+
+
+class TestCaseV2(unittest.TestCase):
+
+    def setUp(self):
+        self.config = _load_config('v2')
+        self.sisense = Sisense(self.config['host'], self.config['token'])
