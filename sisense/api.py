@@ -1,5 +1,4 @@
-from .exception import RequestError
-from typing import IO
+from urllib.parse import quote
 import requests
 import os
 
@@ -37,6 +36,7 @@ class API:
         :param uri: (str, default '') Resource identifier.
         :return: (str) Full url.
         """
+        uri = quote(uri)
         return os.path.join(self._url, uri)
 
     def get(self, uri: str, query: dict = None, headers: dict = None) -> dict:
@@ -148,6 +148,7 @@ class API:
     def _request(self, method: str, uri: str, **kwargs) -> dict:
         path = self.url(uri)
         kwargs['headers'] = self._headers(kwargs['headers'])
+        kwargs['verify'] = False
 
         response = requests.request(method, path, **kwargs)
         self._handle_request_error(response)
