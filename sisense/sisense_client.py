@@ -1,4 +1,5 @@
-from .data import Datamodel, Build
+from .data import Datamodel, Build, Permission
+from .admin import User, Group
 from .api import API
 
 
@@ -25,6 +26,24 @@ class Sisense:
         """Start point for build objects."""
         api = self._api_v2()
         return Build(api)
+
+    @property
+    def permission(self) -> Permission:
+        """Start point for permission objects."""
+        api = self._api_v09()
+        return Permission(api)
+
+    @property
+    def user(self) -> User:
+        """Start point for user objects."""
+        api = self._api_v1()
+        return User(api)
+
+    @property
+    def group(self) -> Group:
+        """Start point for group objects."""
+        api = self._api_v1()
+        return Group(api)
 
     def _api_v2(self):
         return API(self._host, 'v2', self._token)

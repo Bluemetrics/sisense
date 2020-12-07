@@ -25,16 +25,6 @@ class Datamodel(Resource):
 
         return Datamodel(self._api, content)
 
-    def get_builds(self, status: str = None) -> list:
-        """
-        Get a list of build tasks for this datamodel.
-
-        :param status: (str, default None) Build status to filter results by. Possible values: pending, building, done, failed, cancelled.
-
-        :return: (list) List of Build objects.
-        """
-        return Build(self._api).tasks(self.oid, status)
-
     def create(self, title: str, server: str = 'LocalHost', ctype: str = 'extract') -> Resource:
         """
         Create a new datamodel.
@@ -86,22 +76,6 @@ class Datamodel(Resource):
         """
         self._upload_full(title, filepath) if full else self._upload_schema(title, filepath)
         return self.get(title=title)
-
-    def start_build(self, build_type: str = 'schema_changes', row_limit: int = None) -> Resource:
-        """
-        Start a build task for this datamodel.
-
-        :param build_type: (str, default 'schema_changes') Type of build. Possible values: schema_changes, by_table, full
-        :param row_limit: (int) Row limit.
-
-        :return: (Build) Build task created.
-        """
-        return Build(self._api).start(self.oid, build_type, row_limit)
-
-    def stop_builds(self):
-        """Cancel/stop all running build tasks for this Datamodel."""
-        builds = Build(self._api).tasks(self.oid, Build.BUILDING)
-        [build.stop() for build in builds]
 
     def _download_schema(self, filepath: str):
         query = {'datamodelId': self.oid, 'type': 'schema-latest'}
