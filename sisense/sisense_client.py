@@ -33,4 +33,4 @@ class Sisense:
         return API(self._host, 'v1', self._token)
 
     def _api_v09(self):
-        return API(self._host, 'v0.9', self._token)
+        return API(self._host, '', self._token)
