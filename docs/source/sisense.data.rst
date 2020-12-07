@@ -20,6 +20,14 @@ sisense.data.datamodel module
    :undoc-members:
    :show-inheritance:
 
+sisense.data.permission module
+------------------------------
+
+.. automodule:: sisense.data.permission
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 
