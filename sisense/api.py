@@ -146,6 +146,8 @@ class API:
         return headers
 
     def _request(self, method: str, uri: str, **kwargs) -> dict:
+        requests.packages.urllib3.disable_warnings()
+
         path = self.url(uri)
         kwargs['headers'] = self._headers(kwargs['headers'])
         kwargs['verify'] = False

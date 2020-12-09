@@ -15,6 +15,14 @@ class Resource:
         self._api = api
         self.json = rjson if rjson else {}
 
+    def new(self, rjson: dict) -> object:
+        """Create a new resource with different properties, but same API.
+
+        :param rjson: (dict) Resource representation.
+        :return: (Resource) The new resource
+        """
+        return Resource(self._api, rjson)
+
     def save(self, filepath: str):
         """
         Save the object representation as a .json file.

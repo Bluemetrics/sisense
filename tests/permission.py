@@ -20,18 +20,20 @@ class PermissionTestCase(TestCase):
 
     def test_add(self):
         self.sisense.permission.delete_all(self.config['elasticube'])
+
+        self.sisense.permission.delete_all(self.config['elasticube'])
         old_permissions = self.sisense.permission.get(self.config['elasticube'])
 
         user = self.sisense.user.get(self.config['user_email'])
-        permission = self.sisense.permission.add(self.config['elasticube'], user._id, 'user', 'r')
+        self.sisense.permission.add(self.config['elasticube'], user._id, 'user', 'r')
+
+        group = self.sisense.group.get('Dafiti')
+        self.sisense.permission.add(self.config['elasticube'], group._id, 'group', 'r')
 
         new_permissions = self.sisense.permission.get(self.config['elasticube'])
-        self.assertEqual(len(old_permissions) + 1, len(new_permissions))
+        self.assertEqual(len(old_permissions) + 2, len(new_permissions))
 
-        user_permission = [p for p in new_permissions if p.party == permission.party == user._id]
-        self.assertEqual(len(user_permission), 1)
-
-        permission.delete_all(self.config['elasticube'])
+        self.sisense.permission.delete_all(self.config['elasticube'])
 
     def test_delete_all(self):
         self.sisense.permission.delete_all(self.config['elasticube'])

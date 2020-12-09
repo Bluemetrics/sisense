@@ -5,7 +5,6 @@ Subpackages
 -----------
 
 .. toctree::
-   :maxdepth: 4
 
    sisense.admin.auth
 
@@ -27,6 +26,7 @@ sisense.admin.user module
    :members:
    :undoc-members:
    :show-inheritance:
+
 
 Module contents
 ---------------

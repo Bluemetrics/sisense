@@ -20,24 +20,30 @@ class Permission(Resource):
 
         return permissions
 
-    def add(self, elasticube: str, oid: str = None, ptype: str = None, permission: str = None) -> object:
+    def add(self, elasticube: str, oid: str = None, ptype: str = None, level: str = None, permissions: list = None):
         """Add new permissions to the specified elasticube.
-        If any optional parameters are None, add the current permission.
+        If permissions is none and any other optional parameters are None, add the current permission.
+        Use permissions parameter to add several permissions at once.
+        Use the other parameters to add just one permission.
 
         :param elasticube: (str, default None) Elasticube's name.
         :param oid: (str, default None) Group/user id.
         :param ptype: (str, default None) Party's type. Possible values are: 'group' or 'user'.
-        :param permission: (str, default None) Permission's type. Possible values are: 'r' (read) or 'w' (write).
-        :return: Permission
+        :param level: (str, default None) Permission's type. Possible values are: 'r' (read) or 'w' (write).
+        :param permissions: (list) List of permissions JSONs to add all at once.
         """
-        if oid is None or type is None or permission is None:
-            data = [self._json]
+        if permissions is None:
+            if oid is None or type is None or level is None:
+                data = [self._json]
+            else:
+                data = [{'party': oid, 'type': ptype, 'permission': level}]
         else:
-            data = [{'party': oid, 'type': ptype, 'permission': permission}]
+            data = permissions
 
-        self._api.put(f'elasticubes/localhost/{elasticube}/permissions', data=data)
+        all_permissions = self.get(elasticube)
+        all_permissions = [p.json for p in all_permissions] + data
 
-        return Permission(self._api, data[0])
+        self._api.put(f'elasticubes/localhost/{elasticube}/permissions', data=all_permissions)
 
     def delete_all(self, elasticube: str):
         """Delete all elasticube's permissions.
