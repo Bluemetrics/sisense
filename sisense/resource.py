@@ -34,10 +34,10 @@ class Resource:
             json.dump(self.json, file)
 
     def __setattr__(self, key, value):
-        if key in self.__dict__ or key in ['json', '_api']:
+        if key in self.__dict__ or key in ['json', '_api', '_elasticube']:
             self.__dict__[key] = value
         else:
-            self.__dict__['_json'][key] = value
+            self.__dict__['json'][key] = value
 
     def __getattr__(self, item):
         if item in self.__dict__:

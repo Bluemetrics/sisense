@@ -1,4 +1,4 @@
-from .data import Datamodel, Build, Permission
+from .data import Datamodel, Build, Permission, Hierarchy
 from .admin import User, Group
 from .api import API
 
@@ -32,6 +32,12 @@ class Sisense:
         """Start point for permission objects."""
         api = self._api_v09()
         return Permission(api)
+
+    @property
+    def hierarchy(self) -> Hierarchy:
+        """Start point for hierarchy objects."""
+        api = self._api_v09()
+        return Hierarchy(api)
 
     @property
     def user(self) -> User:
