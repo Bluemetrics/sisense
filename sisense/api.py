@@ -1,4 +1,5 @@
 from urllib.parse import quote
+from .utils import is_json
 import requests
 import os
 
@@ -102,7 +103,7 @@ class API:
 
     def download(self, uri: str, filepath: str, query: dict = None, headers: dict = None):
         """
-        Download file from stream.
+Download file from stream.
 
         :param uri: (str) Resource identifier.
         :param filepath: (str) Where to save the downloaded file, including file's name.
@@ -155,7 +156,11 @@ class API:
         response = requests.request(method, path, **kwargs)
         self._handle_request_error(response)
 
-        content = response.json() if len(response.text) else {}
+        if len(response.text):
+            content = response.json() if is_json(response.text) else {'message': response.text}
+        else:
+            content = {}
+
         return content
 
     def _handle_request_error(self, response):
