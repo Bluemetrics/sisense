@@ -20,6 +20,14 @@ sisense.data.datamodel module
    :undoc-members:
    :show-inheritance:
 
+sisense.data.datasecurity module
+--------------------------------
+
+.. automodule:: sisense.data.datasecurity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 sisense.data.hierarchy module
 -----------------------------
 
