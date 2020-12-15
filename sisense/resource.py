@@ -14,9 +14,11 @@ class Resource:
         # If you add a new attribute, always remember to include it on __setattr__
         self._api = api
         self.json = rjson if rjson else {}
+        self.fix_shares()
 
     def new(self, rjson: dict) -> object:
-        """Create a new resource with different properties, but same API.
+        """
+        Create a new resource with different properties, but same API.
 
         :param rjson: (dict) Resource representation.
         :return: (Resource) The new resource
@@ -32,6 +34,30 @@ class Resource:
         filepath = filepath if filepath.endswith('.json') else f'{filepath}.json'
         with open(filepath, 'r') as file:
             json.dump(self.json, file)
+
+    def fix_shares(self) -> object:
+        """
+        When API returns some resource with shares, each share has a field called 'partyId'.
+        However, when adding or updating this resource, the API only accepts the field 'party'.
+        So, this method replaces 'partyId' with 'party'.
+
+        :return: (Resource) The updated resource.
+        """
+        if hasattr(self, 'shares'):
+            for i, share in enumerate(self.shares):
+                if 'partyId' in share:
+                    share['party'] = share['partyId']
+
+                share.pop('partyId', None)
+                share.pop('partyName', None)
+
+                self.shares[i] = share
+
+        elif hasattr(self, 'partyId'):
+            self.json['party'] = self.json['partyId']
+            self.json.pop('partyId')
+
+        return self
 
     def __setattr__(self, key, value):
         if key in self.__dict__ or key in ['json', '_api', '_elasticube']:

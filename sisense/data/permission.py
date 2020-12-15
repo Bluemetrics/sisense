@@ -1,53 +1,76 @@
 from sisense.resource import Resource
+from sisense.api import API
 
 
 class Permission(Resource):
 
-    def get(self, elasticube: str) -> list:
-        """Get permissions (shares) for the specified elasticube.
+    def __init__(self, api: API, rjson: dict = None, elasticube_name: str = None):
+        super().__init__(api, rjson)
+        self._elasticube = elasticube_name
 
-        :param elasticube: (str) Elasticube's name.
+    def all(self, elasticube: str = None) -> list:
+        """
+        Get permissions (shares) for the specified elasticube.
+
+        :param elasticube: (str, default None) Elasticube's name. If None, use self.elasticube.
         :return: a list of permission objects
         """
+        elasticube = elasticube if elasticube else self._elasticube
         content = self._api.get(f'elasticubes/localhost/{elasticube}/permissions')
 
-        permissions = []
-        for p in content['shares']:
-            p['party'] = p['partyId']
-            del p['partyId']
+        permissions = [Permission(self._api, share, elasticube) for share in content['shares']]
+        permissions = {share.party: share for share in permissions}
+        permissions = permissions.values()
 
-            permissions.append(Permission(self._api, p))
+        return list(permissions)
 
-        return permissions
+    def get(self, oid: str, elasticube: str = None) -> Resource:
+        """
+        Get the permission for a user/group.
 
-    def add(self, elasticube: str, oid: str = None, ptype: str = None, level: str = None, permissions: list = None):
-        """Add new permissions to the specified elasticube.
-        If permissions is none and any other optional parameters are None, add the current permission.
-        Use permissions parameter to add several permissions at once.
-        Use the other parameters to add just one permission.
+        :param oid: (str) Party ID.
+        :param elasticube: (str, default None) Elasticube's name. If None, use self.elasticube.
+        :return: (Permission) if found. None, otherwise.
+        """
+        for share in self.all(elasticube):
+            if share.party == oid:
+                return share
 
-        :param elasticube: (str, default None) Elasticube's name.
+        return None
+
+    def create(self, oid: str = None, ptype: str = None, level: str = None, elasticube: str = None) -> Resource:
+        """
+        Create new permission to the specified elasticube.
+        If any optional parameters are None, add the current permission.
+
         :param oid: (str, default None) Group/user id.
         :param ptype: (str, default None) Party's type. Possible values are: 'group' or 'user'.
         :param level: (str, default None) Permission's type. Possible values are: 'r' (read) or 'w' (write).
-        :param permissions: (list) List of permissions JSONs to add all at once.
+        :param elasticube: (str, default None) Elasticube's name. If None, use self.elasticube.
+
+        :return: (Permission) The new permission.
         """
-        if permissions is None:
-            if oid is None or type is None or level is None:
-                data = [self._json]
-            else:
-                data = [{'party': oid, 'type': ptype, 'permission': level}]
-        else:
-            data = permissions
+        elasticube = elasticube if elasticube else self._elasticube
+        data = self.json if oid is None or type is None or level is None else {'party': oid,
+                                                                               'type': ptype,
+                                                                               'permission': level}
 
-        all_permissions = self.get(elasticube)
-        all_permissions = [p.json for p in all_permissions] + data
+        permissions = [share.json for share in self.all(elasticube)] + [data]
+        self._api.put(f'elasticubes/localhost/{elasticube}/permissions', data=permissions)
 
-        self._api.put(f'elasticubes/localhost/{elasticube}/permissions', data=all_permissions)
+        return Permission(self._api, data, elasticube)
 
-    def delete_all(self, elasticube: str):
-        """Delete all elasticube's permissions.
+    def delete(self):
+        """Delete the current permission."""
+        permissions = self.all()
+        self._api.delete(f'elasticubes/localhost/{self._elasticube}/permissions')
+        [share.create(share.party, share.type, share.permission) for share in permissions if share.party != self.party]
 
-        :param elasticube: (str, default None) Elasticube's name.
+    def delete_all(self, elasticube: str = None):
         """
+        Delete all elasticube's permissions.
+
+        :param elasticube: (str, default None) Elasticube's name. If None, use self.elasticube.
+        """
+        elasticube = elasticube if elasticube else self._elasticube
         self._api.delete(f'elasticubes/localhost/{elasticube}/permissions')

@@ -1,74 +1,117 @@
 from sisense.resource import Resource
+from sisense.api import API
 
 
 class DataSecurity(Resource):
 
-    def get(self, elasticube: str) -> list:
-        """Get elasticube's data security rules.
+    def __init__(self, api: API, rjson: dict = None, elasticube_name: str = None):
+        super().__init__(api, rjson)
+        self._elasticube = elasticube_name
 
-        :param elasticube: (str) Elasticube's name.
-        :return: a list of DataSecurity objects
+    def all(self, table: str = None, column: str = None, elasticube: str = None) -> list:
         """
-        content = self._api.get(f'elasticubes/localhost/{elasticube}/datasecurity')
-        results = [DataSecurity(self._api, rjson) for rjson in content]
+        Get elasticube's data security rules. If 'table' and 'column' are specified, get rules for that specific column.
 
+        :param table: (str, default None) Datatable's name.
+        :param column: (str, default None) Column's name.
+        :param elasticube: (str, default None) Elasticube's name. If None, use self.elasticube.
+        :return: (list) of DataSecurity objects
+        """
+        elasticube = elasticube if elasticube else self._elasticube
+        tbl_col = f'/{table}/{column}' if table and column else ''
+
+        content = self._api.get(f'elasticubes/localhost/{elasticube}/datasecurity{tbl_col}')
+
+        results = [DataSecurity(self._api, rjson, elasticube) for rjson in content]
         return results
 
-    def add(self, elasticube: str, datasecurity: object = None) -> object:
-        """Add a new data security rule.
-
-        :param elasticube: (str) Elasticube's name.
-        :param datasecurity: (DataSecurity, default None) If None, add self.
-        :return: (DataSecurity)
+    def get(self, oid: str, elasticube: str = None) -> Resource:
         """
-        elasticube = elasticube if elasticube else self.elasticube
-        datasecurity = datasecurity if datasecurity else self
-        data = self._data(datasecurity)
+        Get the specified data security rule.
+
+        :param oid: (str) Rule's ID.
+        :param elasticube: (str, default None) Elasticube's name. If None, use self.elasticube.
+        :return: (DataSecurity) if found. Otherwise, None.
+        """
+        for rule in self.all(elasticube=elasticube):
+            if rule._id == oid:
+                return rule
+
+        return None
+
+    def create(self, table: str, column: str, datatype: str, shares: list, elasticube: str = None, **kwargs) -> Resource:
+        """
+        Create a new data security rule.
+
+        :param table: (str) Datatable's name.
+        :param column: (str) Column's name.
+        :param datatype: (str) Type of data. For example: 'text'.
+        :param shares: (list) List of shares dict {'party': <user/group id>, 'type': <'user' or 'group'>}
+        :param members: (list, default None) Values considered. For example: if column is CountryName, then members can be a list of country names to allow or deny.
+        :param all_members: (bool, default True) Whether to apply the rules for all members. If members is set, this parameter is ignored.
+        :param exclusionary: (bool, default True) Allow (False) or deny (True) members.
+        :param elasticube: (str, default None) Elasticube's name. If None, use self.elasticube.
+        :return: (DataSecurity) The new data security rule.
+        """
+        elasticube = elasticube if elasticube else self._elasticube
+        data = self._payload(table, column, datatype, shares, **kwargs)
 
         content = self._api.post(f'elasticubes/localhost/{elasticube}/datasecurity', data=[data])
-        result = DataSecurity(self._api, content[0])
+        result = DataSecurity(self._api, content[0], elasticube)
 
         return result
 
-    def update(self, datasecurity: object) -> object:
+    def update(self) -> Resource:
         """Update the current data security rule.
 
-        :param datasecurity: (DataSecurity) Data security object with new configuration.
         :return: (DataSecurity) updated.
         """
-        data = self._data(datasecurity)
+        self.fix_shares()
+        data = self._payload(**self.json)
+
         content = self._api.put(f'elasticubes/datasecurity/{self._id}', data=data)
 
-        return DataSecurity(self._api, content)
+        return DataSecurity(self._api, content, self._elasticube)
 
     def delete(self):
         """Delete the current data security rule."""
         self._api.delete(f'elasticubes/datasecurity/{self._id}')
 
-    def _data(self, datasecurity: object) -> dict:
-        shares = datasecurity.shares
-        for i, share in enumerate(shares):
-            if 'partyId' in share:
-                share['party'] = share['partyId']
+    def delete_all(self, table: str = None, column: str = None, elasticube: str = None):
+        """
+        Delete data security rules for a specific column.
 
-            share.pop('partyId', None)
-            share.pop('partyName', None)
+        :param table: (str, default None) Datatable's name. If None, use self.table.
+        :param column: (str, default None) Column's name. If None, use self.column.
+        :param elasticube: (str, default None) Elasticube's name. If None, use self.elasticube.
+        """
+        elasticube = elasticube if elasticube else self._elasticube
+        table = table if table else self.table
+        column = column if column else self.column
 
-            shares[i] = share
+        self._api.delete(f'elasticubes/localhost/{elasticube}/datasecurity', query={'table': table, 'column': column})
 
+    def _payload(self,
+                 table: str,
+                 column: str,
+                 datatype: str,
+                 shares: list,
+                 **kwargs):
         data = {
-            'column': datasecurity.column,
+            'table': table,
+            'column': column,
+            'datatype': datatype,
             'shares': shares,
-            'table': datasecurity.table,
-            'datatype': datasecurity.datatype
         }
 
-        if hasattr(datasecurity, 'exclusionary'):
-            data['exclusionary'] = datasecurity.exclusionary
+        if 'exclusionary' in kwargs:
+            data['exclusionary'] = kwargs['exclusionary']
 
-        if hasattr(datasecurity, 'allMembers') and datasecurity.allMembers:
-            data['allMembers'] = datasecurity.allMembers
+        if 'members' in kwargs:
+            data['members'] = kwargs['members']
+            data['allMembers'] = None
         else:
-            data['members'] = datasecurity.members
+            data['allMembers'] = kwargs['all_members']
+            data['members'] = []
 
         return data
