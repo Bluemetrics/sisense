@@ -80,7 +80,7 @@ class Build(Resource):
         """Update this build information."""
         self.json = self.get(self.oid).json
 
-    def tasks(self, datamodel_id: str = None, status: str = None) -> list:
+    def all(self, datamodel_id: str = None, status: str = None) -> list:
         """
         Get a list of build tasks.
 
