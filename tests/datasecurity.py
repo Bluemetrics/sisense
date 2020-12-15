@@ -1,68 +1,80 @@
 from .test_case import TestCaseV09 as TestCase
 from sisense.data import DataSecurity
 import unittest
+import json
 
 
 class DataSecurityTestCase(TestCase):
 
-    def test_get(self):
-        results = self.sisense.datasecurity.get(self.config['elasticube'])
+    def test_all(self):
+        datasecurity = self.sisense.datasecurity
 
-        self.assertEqual(len(results), 4)
+        results = datasecurity.all(elasticube=self.config['elasticube'])
+        ids = [r._id for r in self.rules]
+
         self.assertIsInstance(results, list)
+        self.assertEqual(len(results), len(self.rules))
 
-        for ds in results:
-            self.assertIsInstance(ds, DataSecurity)
+        for rule in results:
+            self.assertIsInstance(rule, DataSecurity)
+            self.assertIn(rule._id, ids)
 
-    def test_add(self):
-        results = self.sisense.datasecurity.get(self.config['elasticube'])
+        results = datasecurity.all(self.rules[-1].table, self.rules[-1].column, self.config['elasticube'])
+        for rule in results:
+            self.assertEqual(self.rules[-1].table, rule.table)
+            self.assertEqual(self.rules[-1].column, rule.column)
 
-        results[1].exclusionary = True
-        ds = self.sisense.datasecurity.add(self.config['elasticube'], results[1])
+    def test_get(self):
+        rule = self.sisense.datasecurity.get(self.rules[0]._id, self.config['elasticube'])
 
-        new_results = self.sisense.datasecurity.get(self.config['elasticube'])
-        ds.delete()
-
-        self.assertEqual(len(results) + 1, len(new_results))
+        self.assertIsInstance(rule, DataSecurity)
+        self.assertEqual(rule._id, self.rules[0]._id)
 
     def test_update(self):
-        results = self.sisense.datasecurity.get(self.config['elasticube'])
-
-        datasecurity = None
-        for ds in results:
-            if 'Mississippi' in ds.members:
-                datasecurity = ds
+        for r in self.rules:
+            if hasattr(r, 'members') and len(r.members):
+                rule = r
                 break
 
-        datasecurity.members.append('California')
+        rule.exclusionary = True
+        rule.members.append('California')
 
-        new_datasecurity = datasecurity.update(datasecurity)
-        new_results = self.sisense.datasecurity.get(self.config['elasticube'])
+        new_rule = rule.update()
 
-        self.assertEqual(len(new_datasecurity.members), len(datasecurity.members))
-        self.assertEqual(len(results), len(new_results))
-        self.assertIn('California', new_datasecurity.members)
+        self.assertTrue(new_rule.exclusionary)
+        self.assertEqual(len(new_rule.members), len(rule.members))
+        self.assertIn('California', new_rule.members)
 
-        datasecurity.members = ['Mississippi']
-        datasecurity.update(datasecurity)
+    def test_delete_all(self):
+        datasecurity = self.sisense.datasecurity
 
-    def test_delete(self):
-        results = self.sisense.datasecurity.get(self.config['elasticube'])
+        datasecurity.delete_all('DimProducts', 'ProductName', self.config['elasticube'])
+        this_results = datasecurity.all('DimProducts', 'ProductName', elasticube=self.config['elasticube'])
+        other_results = datasecurity.all(elasticube=self.config['elasticube'])
 
-        i = 1
-        for ds in results:
-            ds.delete()
-            new_results = self.sisense.datasecurity.get(self.config['elasticube'])
+        self.assertEqual(len(this_results), 0)
+        self.assertNotEqual(len(other_results), len(self.rules))
 
-            self.assertEqual(len(results), len(new_results) + i)
-            i = i + 1
+    def create(self):
+        datasecurity = self.sisense.datasecurity
 
-        new_results = self.sisense.datasecurity.get(self.config['elasticube'])
+        with open('tests/support_files/datasecurity.json', 'r') as file:
+            rules = json.load(file)
 
+        for rule in rules:
+            rule.pop('elasticube', None)
+            datasecurity.create(**rule, elasticube=self.config['elasticube'])
+
+        self.rules = datasecurity.all(elasticube=self.config['elasticube'])
+        self.assertEqual(len(self.rules), len(rules))
+
+    def delete(self):
+        datasecurity = self.sisense.datasecurity
+        results = datasecurity.all(elasticube=self.config['elasticube'])
+        [rule.delete() for rule in results]
+
+        new_results = datasecurity.all(elasticube=self.config['elasticube'])
         self.assertEqual(len(new_results), 0)
-
-        for ds in results:
-            ds.add(self.config['elasticube'])
 
 
 if __name__ == '__main__':

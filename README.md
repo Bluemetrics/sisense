@@ -38,8 +38,9 @@ $ make api-test
 #### Support files
 In order to test the API functions, you need to supply the following support files:
 
-- `tests/support_files/cube.sdata`: an elasticube schema + data
-- `tests/support_files/dashboard.dash`: a dashboard JSON file
+- `tests/support_files/datasecurity.json`: a list of data security rules
+- `tests/support_files/hierarchy.json`: a list of hierarchy objects
+- `tests/support_files/permission.json`: a list of permission objects
 - `tests/support_files/config/api_v09.json`: a JSON with
 ```json
 {

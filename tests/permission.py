@@ -1,45 +1,58 @@
 from .test_case import TestCaseV09 as TestCase
 from sisense.data import Permission
 import unittest
+import json
 
 
 class PermissionTestCase(TestCase):
 
+    def test_all(self):
+        results = self.sisense.permission.all(elasticube=self.config['elasticube'])
+        ids = [p.party for p in self.permissions]
+
+        self.assertIsInstance(results, list)
+        self.assertEqual(len(results), len(self.permissions))
+
+        for p in results:
+            self.assertIsInstance(p, Permission)
+            self.assertIn(p.party, ids)
+
     def test_get(self):
+        p = self.sisense.permission.get(self.permissions[-1].party, self.config['elasticube'])
+
+        self.assertIsInstance(p, Permission)
+        self.assertEqual(p.party, self.permissions[-1].party)
+
+    def test_delete(self):
         permission = self.sisense.permission
-        permissions = permission.get(self.config['elasticube'])
 
-        self.assertGreaterEqual(len(permissions), 1)
+        p = permission.get(self.permissions[-1].party, self.config['elasticube'])
+        p.delete()
 
-        for obj in permissions:
-            self.assertEqual(type(obj), Permission)
+        results = permission.all(self.config['elasticube'])
+        ids = [p.party for p in results]
 
-        permissions = permission.get('Non existing elasticube')
-        self.assertEqual(len(permissions), 1)
-        self.assertEqual(permissions[0].permission, None)
+        self.assertEqual(len(results), len(self.permissions) - 1)
+        self.assertNotIn(p.party, ids)
 
-    def test_add(self):
-        self.sisense.permission.delete_all(self.config['elasticube'])
+    def create(self):
+        permission = self.sisense.permission
 
-        self.sisense.permission.delete_all(self.config['elasticube'])
-        old_permissions = self.sisense.permission.get(self.config['elasticube'])
+        with open('tests/support_files/permission.json', 'r') as file:
+            permissions = json.load(file)
 
-        user = self.sisense.user.get(self.config['user_email'])
-        self.sisense.permission.add(self.config['elasticube'], user._id, 'user', 'r')
+        for p in permissions:
+            permission.create(p['party'], p['type'], p['permission'], self.config['elasticube'])
 
-        group = self.sisense.group.get('Dafiti')
-        self.sisense.permission.add(self.config['elasticube'], group._id, 'group', 'r')
+        self.permissions = permission.all(elasticube=self.config['elasticube'])
+        self.assertEqual(len(self.permissions), len(permissions))
 
-        new_permissions = self.sisense.permission.get(self.config['elasticube'])
-        self.assertEqual(len(old_permissions) + 2, len(new_permissions))
+    def delete(self):
+        permission = self.sisense.permission
+        permission.delete_all(self.config['elasticube'])
 
-        self.sisense.permission.delete_all(self.config['elasticube'])
-
-    def test_delete_all(self):
-        self.sisense.permission.delete_all(self.config['elasticube'])
-        new_permissions = self.sisense.permission.get(self.config['elasticube'])
-
-        self.assertEqual(len(new_permissions), 1)
+        results = permission.all(self.config['elasticube'])
+        self.assertEqual(len(results), 1)
 
 
 if __name__ == '__main__':
