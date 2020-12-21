@@ -1,4 +1,5 @@
 from .api import API
+from .analysis import *
 from .admin import *
 from .data import *
 
@@ -56,6 +57,18 @@ class Sisense:
         """Start point for group objects."""
         api = self._api_v1()
         return Group(api)
+
+    @property
+    def dashboard(self) -> Dashboard:
+        """Start point for dashboard objects."""
+        api = self._api_v1()
+        return Dashboard(api)
+
+    @property
+    def folder(self) -> Folder:
+        """Start point for folder objects."""
+        api = self._api_v1()
+        return Folder(api)
 
     def _api_v2(self):
         return API(self._host, 'v2', self._token)

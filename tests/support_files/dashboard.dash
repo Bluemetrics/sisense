@@ -1,6 +1,6 @@
 {
-  "title": "AdventureWorks Dashboard",
-  "oid": "5f624193993ff1002d46e06d",
+  "title": "Sample Retail",
+  "oid": "5fdcb651cf5cf13ea87ea9c2",
   "desc": "",
   "source": null,
   "type": "dashboard",
@@ -8,21 +8,19 @@
     "name": "vivid",
     "palette": {
       "colors": [
-        "#00cee6",
-        "#9b9bd7",
-        "#6EDA55",
-        "#fc7570",
-        "#fbb755",
-        "#218A8C"
+        "#25CED1",
+        "#B8BEC5",
+        "#35A7FF",
+        "#1FA9AC",
+        "#7F8A97",
+        "#226BA3"
       ],
-      "name": "Vivid",
-      "sortOrder": 10,
-      "isSystem": true,
-      "systemDefault": true
+      "name": "Peace",
+      "sortOrder": 0
     }
   },
   "layout": {
-    "instanceid": "E593F-AB6A-FA",
+    "instanceid": "83262-AEBD-5C",
     "type": "columnar",
     "columns": [
       {
@@ -39,12 +37,12 @@
                     "minWidth": 48,
                     "maxWidth": 1028,
                     "defaultWidth": 512,
-                    "widgetid": "5f636b57993ff1002d46e431"
+                    "widgetid": "5fdcb689cf5cf13ea87ea9c5"
                   }
                 ],
-                "width": 32.11678832116788,
+                "width": 33.333333333333336,
                 "stretchable": false,
-                "pxlWidth": 307.984,
+                "pxlWidth": 315.656,
                 "index": 0
               },
               {
@@ -56,12 +54,12 @@
                     "minWidth": 48,
                     "maxWidth": 1028,
                     "defaultWidth": 512,
-                    "widgetid": "5f636c36993ff1002d46e433"
+                    "widgetid": "5fdcb6adcf5cf13ea87ea9c7"
                   }
                 ],
-                "width": 34.20229405630866,
+                "width": 33.333333333333336,
                 "stretchable": false,
-                "pxlWidth": 328,
+                "pxlWidth": 315.656,
                 "index": 1
               },
               {
@@ -73,12 +71,12 @@
                     "minWidth": 48,
                     "maxWidth": 1028,
                     "defaultWidth": 512,
-                    "widgetid": "5f636d2a993ff1002d46e435"
+                    "widgetid": "5fdcb714cf5cf13ea87ea9c9"
                   }
                 ],
-                "width": 33.68091762252346,
+                "width": 33.333333333333336,
                 "stretchable": false,
-                "pxlWidth": 322.984,
+                "pxlWidth": 315.656,
                 "index": 2
               }
             ]
@@ -92,68 +90,25 @@
                     "maxHeight": 2048,
                     "minWidth": 128,
                     "maxWidth": 2048,
-                    "height": "356px",
-                    "defaultWidth": 512,
-                    "widgetid": "5f637a95993ff1002d46e444",
-                    "autoHeight": "166px"
-                  }
-                ],
-                "width": 100,
-                "stretchable": false,
-                "pxlWidth": 959,
-                "index": 0
-              }
-            ]
-          },
-          {
-            "subcells": [
-              {
-                "elements": [
-                  {
-                    "minHeight": 96,
-                    "maxHeight": 2048,
-                    "minWidth": 128,
-                    "maxWidth": 2048,
                     "height": 384,
                     "defaultWidth": 512,
-                    "widgetid": "5f689d8c993ff1002d46ed1d"
-                  }
-                ],
-                "width": 100,
-                "stretchable": false,
-                "pxlWidth": 959,
-                "index": 0
-              }
-            ]
-          },
-          {
-            "subcells": [
-              {
-                "elements": [
-                  {
-                    "minHeight": 96,
-                    "maxHeight": 2048,
-                    "minWidth": 128,
-                    "maxWidth": 2048,
-                    "height": 384,
-                    "defaultWidth": 512,
-                    "widgetid": "5f68a023993ff1002d46ed23"
+                    "widgetid": "5fdcb776cf5cf13ea87ea9ce"
                   }
                 ]
               }
             ]
           }
         ],
-        "pxlWidth": 959,
+        "pxlWidth": 0,
         "index": 0
       }
     ],
     "container": {
-      "sizzle1600376094663": {
+      "sizzle1608299889438": {
         "undefined": {
           "parentNode": [
-            849.7312995921436,
-            27,
+            420,
+            119,
             true
           ]
         }
@@ -163,149 +118,304 @@
   "original": null,
   "dataExploration": false,
   "datasource": {
-    "fullname": "localhost/exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-    "id": "localhost_aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
+    "title": "Sample Retail",
+    "fullname": "LocalHost/Sample Retail",
+    "id": "aLOCALHOST_aSAMPLEIAAaRETAIL",
     "address": "LocalHost",
-    "database": "aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-    "live": false,
-    "title": "exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br"
+    "database": "aSampleIAAaRetail"
   },
-  "filters": [
-    {
-      "jaql": {
-        "datatype": "datetime",
-        "dim": "[DimDate.Date (Calendar)]",
-        "title": "Months in Date",
-        "level": "months",
-        "column": "Date",
-        "table": "DimDate",
-        "filter": {
-          "explicit": false,
-          "multiSelection": true,
-          "all": true
-        },
-        "datasource": {
-          "fullname": "localhost/exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-          "id": "localhost_aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-          "address": "LocalHost",
-          "database": "aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-          "live": false,
-          "title": "exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-          "lastBuildTime": "2020-09-17T20:58:18.477Z"
-        },
-        "collapsed": true
-      },
-      "instanceid": "C9765-D2DD-F2",
-      "isCascading": false
-    },
-    {
-      "instanceid": "2DC4D-7B67-A5",
-      "isCascading": true,
-      "disabled": false,
-      "levels": [
-        {
-          "datatype": "text",
-          "dim": "[ProductCategory.Name]",
-          "title": "Product category",
-          "column": "Name",
-          "table": "ProductCategory",
-          "collapsed": true,
-          "merged": true,
-          "panel": "scope",
-          "datasource": {
-            "fullname": "localhost/exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-            "id": "localhost_aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-            "address": "LocalHost",
-            "database": "aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-            "live": false,
-            "title": "exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-            "lastBuildTime": "2020-09-17T10:50:38"
-          },
-          "filter": {
-            "explicit": false,
-            "multiSelection": true,
-            "all": true
-          }
-        },
-        {
-          "table": "ProductSubcategory",
-          "column": "Name",
-          "dim": "[ProductSubcategory.Name]",
-          "datatype": "text",
-          "merged": true,
-          "collapsed": true,
-          "title": "Prouct subcategory",
-          "panel": "scope",
-          "datasource": {
-            "fullname": "localhost/exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-            "id": "localhost_aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-            "address": "LocalHost",
-            "database": "aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-            "live": false,
-            "title": "exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-            "lastBuildTime": "2020-09-17T10:50:38"
-          },
-          "filter": {
-            "explicit": false,
-            "multiSelection": true,
-            "all": true
-          }
-        },
-        {
-          "table": "Product",
-          "column": "Name",
-          "dim": "[Product.Name]",
-          "datatype": "text",
-          "merged": true,
-          "title": "Product",
-          "collapsed": true,
-          "datasource": {
-            "fullname": "localhost/exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-            "id": "localhost_aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-            "address": "LocalHost",
-            "database": "aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-            "live": false,
-            "title": "exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-            "lastBuildTime": "2020-09-17T10:50:38"
-          },
-          "filter": {
-            "explicit": false,
-            "multiSelection": true,
-            "all": true
-          }
-        }
-      ],
-      "model": {
-        "instanceid": "64CD8-D258-B5",
-        "__store": [
-          "[ProductCategory.Name]",
-          "[ProductSubcategory.Name]",
-          "[Product.Name]"
-        ]
-      }
-    }
-  ],
+  "filters": [],
   "editing": true,
-  "parentFolder": "5f62406b993ff1002d46e06b",
+  "parentFolder": "5fdcb643cf5cf13ea87ea9c0",
   "settings": {
     "autoUpdateOnFiltersChange": true
   },
-  "filterToDatasourceMapping": {},
   "widgets": [
     {
       "title": "",
       "subtype": "indicator/numeric",
-      "oid": "5f636b57993ff1002d46e431",
+      "oid": "5fdcb689cf5cf13ea87ea9c5",
       "desc": null,
       "source": null,
       "datasource": {
-        "fullname": "localhost/exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-        "id": "localhost_aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
+        "title": "Sample Retail",
+        "fullname": "LocalHost/Sample Retail",
+        "id": "aLOCALHOST_aSAMPLEIAAaRETAIL",
         "address": "LocalHost",
-        "database": "aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-        "live": false,
-        "title": "exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-        "lastBuildTime": "2020-09-17T10:50:38"
+        "database": "aSampleIAAaRetail",
+        "lastBuildTime": "2020-12-16T11:11:56"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "table": "Fact_Purchase_Orders",
+                  "column": "PurchaseCost",
+                  "dim": "[Fact_Purchase_Orders.PurchaseCost]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "Total Purchase Cost"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "color": "#25CED1",
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ]
+      },
+      "type": "indicator",
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": false,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        }
+      },
+      "instanceid": "88AAA-38DE-94",
+      "queryStartTime": "2020-12-18T11:02:21",
+      "drawing": true,
+      "widgetTimingLoged": false,
+      "continuousDates": false,
+      "nullAsZero": false,
+      "forcedRedraw": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "5fdcb651cf5cf13ea87ea9c2"
+    },
+    {
+      "title": "",
+      "subtype": "indicator/numeric",
+      "oid": "5fdcb6adcf5cf13ea87ea9c7",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "Sample Retail",
+        "fullname": "LocalHost/Sample Retail",
+        "id": "aLOCALHOST_aSAMPLEIAAaRETAIL",
+        "address": "LocalHost",
+        "database": "aSampleIAAaRetail",
+        "lastBuildTime": "2020-12-16T11:11:56"
+      },
+      "selection": null,
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "table": "Fact_Sale_orders",
+                  "column": "OrderRevenue",
+                  "dim": "[Fact_Sale_orders.OrderRevenue]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "Total Order Revenue"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "color": "#25CED1",
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ]
+      },
+      "type": "indicator",
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": false,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        }
+      },
+      "instanceid": "A5806-37B4-87",
+      "queryStartTime": "2020-12-18T11:03:15",
+      "drawing": true,
+      "widgetTimingLoged": false,
+      "continuousDates": false,
+      "nullAsZero": false,
+      "forcedRedraw": false,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": false,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showJTDIcon": true
+      },
+      "realTimeRefreshing": false,
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "dashboardid": "5fdcb651cf5cf13ea87ea9c2"
+    },
+    {
+      "title": "",
+      "subtype": "indicator/numeric",
+      "oid": "5fdcb714cf5cf13ea87ea9c9",
+      "desc": null,
+      "source": null,
+      "datasource": {
+        "title": "Sample Retail",
+        "fullname": "LocalHost/Sample Retail",
+        "id": "aLOCALHOST_aSAMPLEIAAaRETAIL",
+        "address": "LocalHost",
+        "database": "aSampleIAAaRetail",
+        "lastBuildTime": "2020-12-16T11:11:56"
       },
       "selection": null,
       "metadata": {
@@ -320,43 +430,42 @@
               {
                 "jaql": {
                   "type": "measure",
-                  "formula": "[93BAF-848] - [325DC-6AD]",
+                  "formula": "[EF6DE-C4C]-[068E3-A79]",
                   "context": {
-                    "[325DC-6AD]": {
-                      "table": "PurchaseOrderHeader",
-                      "column": "SubTotal",
-                      "dim": "[PurchaseOrderHeader.SubTotal]",
+                    "[068E3-A79]": {
+                      "table": "Fact_Purchase_Orders",
+                      "column": "PurchaseCost",
+                      "dim": "[Fact_Purchase_Orders.PurchaseCost]",
                       "datatype": "numeric",
                       "agg": "sum",
-                      "title": "Total SubTotal"
+                      "title": "Total PurchaseCost"
                     },
-                    "[93BAF-848]": {
-                      "table": "SalesOrderHeader",
-                      "column": "SubTotal",
-                      "dim": "[SalesOrderHeader.SubTotal]",
+                    "[EF6DE-C4C]": {
+                      "table": "Fact_Sale_orders",
+                      "column": "OrderRevenue",
+                      "dim": "[Fact_Sale_orders.OrderRevenue]",
                       "datatype": "numeric",
                       "agg": "sum",
-                      "title": "Total SubTotal"
+                      "title": "Total OrderRevenue"
                     }
                   },
                   "title": "Profit"
                 },
                 "format": {
                   "mask": {
+                    "type": "number",
                     "abbreviations": {
                       "t": true,
                       "b": true,
                       "m": true,
                       "k": false
                     },
+                    "separated": true,
                     "decimals": "auto",
-                    "currency": {
-                      "symbol": "$",
-                      "position": "pre"
-                    }
+                    "isdefault": true
                   },
                   "color": {
-                    "color": "#00cee6",
+                    "color": "#25CED1",
                     "type": "color"
                   }
                 }
@@ -369,564 +478,43 @@
               {
                 "jaql": {
                   "type": "measure",
-                  "formula": "[3B2C3-BDE]",
+                  "formula": "([B51E3-FB3]-[2CCA6-97E])\n/\n[B51E3-FB3]",
                   "context": {
-                    "[3B2C3-BDE]": {
-                      "table": "SalesOrderHeader",
-                      "column": "SalesOrderID",
-                      "dim": "[SalesOrderHeader.SalesOrderID]",
-                      "datatype": "numeric",
-                      "merged": true,
-                      "agg": "count",
-                      "title": "# of unique SalesOrderID"
-                    }
-                  },
-                  "title": "# of Sales"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": false
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "name": "min",
-            "items": []
-          },
-          {
-            "name": "max",
-            "items": []
-          },
-          {
-            "name": "filters",
-            "items": []
-          }
-        ]
-      },
-      "type": "indicator",
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "style": {
-        "subtype": "simple",
-        "skin": "vertical",
-        "components": {
-          "title": {
-            "inactive": false,
-            "enabled": true
-          },
-          "icon": {
-            "inactive": true,
-            "enabled": true
-          },
-          "secondaryTitle": {
-            "inactive": false,
-            "enabled": true
-          }
-        },
-        "indicator/numeric": {
-          "subtype": "simple",
-          "skin": "vertical",
-          "components": {
-            "title": {
-              "inactive": false,
-              "enabled": true
-            },
-            "icon": {
-              "inactive": false,
-              "enabled": true
-            },
-            "secondaryTitle": {
-              "inactive": true,
-              "enabled": true
-            }
-          }
-        },
-        "indicator/gauge": {
-          "subtype": "round",
-          "skin": "1",
-          "components": {
-            "ticks": {
-              "inactive": false,
-              "enabled": true
-            },
-            "labels": {
-              "inactive": false,
-              "enabled": true
-            },
-            "title": {
-              "inactive": false,
-              "enabled": true
-            },
-            "secondaryTitle": {
-              "inactive": true,
-              "enabled": true
-            }
-          }
-        },
-        "narration": {
-          "enabled": false,
-          "display": "above",
-          "format": "bullets",
-          "verbosity": "medium",
-          "up_sentiment": "good",
-          "aggregation": "sum",
-          "labels": []
-        }
-      },
-      "instanceid": "049AD-4344-41",
-      "queryStartTime": "2020-09-22T16:19:02",
-      "drawing": true,
-      "widgetTimingLoged": false,
-      "continuousDates": false,
-      "nullAsZero": false,
-      "forcedRedraw": false,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "drilledDashboardsFolderPrefix": "",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "hideSharedDashboardsForNonOwner": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 3,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": false,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false,
-        "sameCubeRestriction": true,
-        "showJTDIcon": true,
-        "sendPieChartMeasureFiltersOnClick": true,
-        "forceZeroInsteadNull": false,
-        "mergeTargetDashboardFilters": false,
-        "drillToDashboardByName": false
-      },
-      "realTimeRefreshing": false,
-      "options": {
-        "dashboardFiltersMode": "filter",
-        "selector": false,
-        "disallowSelector": true,
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true,
-        "supportsHierarchies": false
-      },
-      "dashboardid": "5f624193993ff1002d46e06d"
-    },
-    {
-      "title": "",
-      "subtype": "indicator/numeric",
-      "oid": "5f636c36993ff1002d46e433",
-      "desc": null,
-      "source": null,
-      "datasource": {
-        "fullname": "localhost/exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-        "id": "localhost_aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-        "address": "LocalHost",
-        "database": "aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-        "live": false,
-        "title": "exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-        "lastBuildTime": "2020-09-17T10:50:38"
-      },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "all": false
-        },
-        "panels": [
-          {
-            "name": "value",
-            "items": [
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "[699C4-EAE]",
-                  "context": {
-                    "[699C4-EAE]": {
-                      "table": "SalesOrderHeader",
-                      "column": "SubTotal",
-                      "dim": "[SalesOrderHeader.SubTotal]",
+                    "[2CCA6-97E]": {
+                      "table": "Fact_Purchase_Orders",
+                      "column": "PurchaseCost",
+                      "dim": "[Fact_Purchase_Orders.PurchaseCost]",
                       "datatype": "numeric",
                       "agg": "sum",
-                      "title": "Total SubTotal"
-                    }
-                  },
-                  "title": "Sales"
-                },
-                "format": {
-                  "mask": {
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": false
+                      "title": "Total PurchaseCost"
                     },
-                    "decimals": "auto",
-                    "currency": {
-                      "symbol": "$",
-                      "position": "pre"
-                    }
-                  },
-                  "color": {
-                    "color": "#00cee6",
-                    "type": "color"
-                  }
-                },
-                "field": {
-                  "id": "[SalesOrderHeader.TotalDue]_sum",
-                  "index": 1
-                }
-              }
-            ]
-          },
-          {
-            "name": "secondary",
-            "items": [
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "[FDCA9-530] / [E0576-752]",
-                  "context": {
-                    "[E0576-752]": {
-                      "table": "SalesOrderHeader",
-                      "column": "SalesOrderID",
-                      "dim": "[SalesOrderHeader.SalesOrderID]",
-                      "datatype": "numeric",
-                      "merged": true,
-                      "agg": "count",
-                      "title": "# of unique SalesOrderID"
-                    },
-                    "[FDCA9-530]": {
-                      "table": "SalesOrderHeader",
-                      "column": "SubTotal",
-                      "dim": "[SalesOrderHeader.SubTotal]",
+                    "[B51E3-FB3]": {
+                      "table": "Fact_Sale_orders",
+                      "column": "OrderRevenue",
+                      "dim": "[Fact_Sale_orders.OrderRevenue]",
                       "datatype": "numeric",
                       "agg": "sum",
-                      "title": "Total SubTotal"
+                      "title": "Total OrderRevenue"
                     }
                   },
-                  "title": "Average per sale"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": false
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "name": "min",
-            "items": []
-          },
-          {
-            "name": "max",
-            "items": []
-          },
-          {
-            "name": "filters",
-            "items": []
-          }
-        ]
-      },
-      "type": "indicator",
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "style": {
-        "subtype": "simple",
-        "skin": "vertical",
-        "components": {
-          "title": {
-            "inactive": false,
-            "enabled": true
-          },
-          "icon": {
-            "inactive": true,
-            "enabled": true
-          },
-          "secondaryTitle": {
-            "inactive": false,
-            "enabled": true
-          }
-        },
-        "indicator/numeric": {
-          "subtype": "simple",
-          "skin": "vertical",
-          "components": {
-            "title": {
-              "inactive": false,
-              "enabled": true
-            },
-            "icon": {
-              "inactive": false,
-              "enabled": true
-            },
-            "secondaryTitle": {
-              "inactive": true,
-              "enabled": true
-            }
-          }
-        },
-        "indicator/gauge": {
-          "subtype": "round",
-          "skin": "1",
-          "components": {
-            "ticks": {
-              "inactive": false,
-              "enabled": true
-            },
-            "labels": {
-              "inactive": false,
-              "enabled": true
-            },
-            "title": {
-              "inactive": false,
-              "enabled": true
-            },
-            "secondaryTitle": {
-              "inactive": true,
-              "enabled": true
-            }
-          }
-        },
-        "narration": {
-          "enabled": false,
-          "display": "above",
-          "format": "bullets",
-          "verbosity": "medium",
-          "up_sentiment": "good",
-          "aggregation": "sum",
-          "labels": []
-        }
-      },
-      "instanceid": "B9AE0-E138-D0",
-      "queryStartTime": "2020-09-22T16:14:34",
-      "drawing": true,
-      "widgetTimingLoged": false,
-      "continuousDates": false,
-      "nullAsZero": false,
-      "forcedRedraw": false,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "drilledDashboardsFolderPrefix": "",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "hideSharedDashboardsForNonOwner": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 3,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": false,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false,
-        "sameCubeRestriction": true,
-        "showJTDIcon": true,
-        "sendPieChartMeasureFiltersOnClick": true,
-        "forceZeroInsteadNull": false,
-        "mergeTargetDashboardFilters": false,
-        "drillToDashboardByName": false
-      },
-      "realTimeRefreshing": false,
-      "options": {
-        "dashboardFiltersMode": "filter",
-        "selector": false,
-        "disallowSelector": true,
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true,
-        "supportsHierarchies": false
-      },
-      "dashboardid": "5f624193993ff1002d46e06d"
-    },
-    {
-      "title": "",
-      "subtype": "indicator/gauge",
-      "oid": "5f636d2a993ff1002d46e435",
-      "desc": null,
-      "source": null,
-      "datasource": {
-        "fullname": "localhost/exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-        "id": "localhost_aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-        "address": "LocalHost",
-        "database": "aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-        "live": false,
-        "title": "exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-        "lastBuildTime": "2020-09-17T10:50:38"
-      },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "all": false
-        },
-        "panels": [
-          {
-            "name": "value",
-            "items": [
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "[2EE55-BE9] / [F770E-ADB]",
-                  "context": {
-                    "[F770E-ADB]": {
-                      "table": "SalesOrderHeader",
-                      "column": "SubTotal",
-                      "dim": "[SalesOrderHeader.SubTotal]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total SubTotal"
-                    },
-                    "[2EE55-BE9]": {
-                      "type": "measure",
-                      "formula": "[349FE-31D] - [96133-C5A]",
-                      "context": {
-                        "[96133-C5A]": {
-                          "table": "PurchaseOrderHeader",
-                          "column": "SubTotal",
-                          "dim": "[PurchaseOrderHeader.SubTotal]",
-                          "datatype": "numeric",
-                          "agg": "sum",
-                          "title": "Total SubTotal"
-                        },
-                        "[349FE-31D]": {
-                          "table": "SalesOrderHeader",
-                          "column": "SubTotal",
-                          "dim": "[SalesOrderHeader.SubTotal]",
-                          "datatype": "numeric",
-                          "agg": "sum",
-                          "title": "Total SubTotal"
-                        }
-                      },
-                      "title": "Profit"
-                    }
-                  },
-                  "title": "Profit Margin"
+                  "title": "%"
                 },
                 "format": {
                   "mask": {
                     "decimals": "auto",
                     "percent": true
-                  },
-                  "color": {
-                    "type": "condition",
-                    "conditions": [
-                      {
-                        "color": "#fc7570",
-                        "operator": "≤",
-                        "expression": "0.25",
-                        "expressionValue": "0.25"
-                      },
-                      {
-                        "color": "#fbb755",
-                        "operator": "<",
-                        "expression": "0.5",
-                        "expressionValue": "0.5"
-                      },
-                      {
-                        "color": "#6eda55",
-                        "operator": "≥",
-                        "expression": "0.5",
-                        "expressionValue": "0.5"
-                      }
-                    ]
                   }
                 }
               }
             ]
-          },
-          {
-            "name": "secondary",
-            "items": []
           },
           {
             "name": "min",
-            "items": [
-              {
-                "jaql": {
-                  "formula": "0",
-                  "title": "0 (default)"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": false
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  }
-                }
-              }
-            ]
+            "items": []
           },
           {
             "name": "max",
-            "items": [
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "1",
-                  "context": {},
-                  "title": "1"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": false
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  }
-                }
-              }
-            ]
+            "items": []
           },
           {
             "name": "filters",
@@ -938,18 +526,14 @@
       "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
       "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
       "style": {
-        "subtype": "round",
-        "skin": "2",
+        "subtype": "simple",
+        "skin": "vertical",
         "components": {
-          "ticks": {
-            "inactive": false,
-            "enabled": false
-          },
-          "labels": {
+          "title": {
             "inactive": false,
             "enabled": true
           },
-          "title": {
+          "icon": {
             "inactive": false,
             "enabled": true
           },
@@ -957,53 +541,11 @@
             "inactive": true,
             "enabled": true
           }
-        },
-        "narration": {
-          "labels": []
-        },
-        "indicator/numeric": {
-          "subtype": "simple",
-          "skin": "vertical",
-          "components": {
-            "title": {
-              "inactive": false,
-              "enabled": true
-            },
-            "icon": {
-              "inactive": false,
-              "enabled": true
-            },
-            "secondaryTitle": {
-              "inactive": true,
-              "enabled": true
-            }
-          }
-        },
-        "indicator/gauge": {
-          "subtype": "round",
-          "skin": "1",
-          "components": {
-            "ticks": {
-              "inactive": false,
-              "enabled": true
-            },
-            "labels": {
-              "inactive": false,
-              "enabled": true
-            },
-            "title": {
-              "inactive": false,
-              "enabled": true
-            },
-            "secondaryTitle": {
-              "inactive": true,
-              "enabled": true
-            }
-          }
         }
       },
-      "instanceid": "A7F27-0746-6C",
-      "queryStartTime": "2020-09-21T10:08:52",
+      "instanceid": "F47F7-FA23-A3",
+      "queryStartTime": "2020-12-18T11:04:39",
+      "drawing": true,
       "widgetTimingLoged": false,
       "continuousDates": false,
       "nullAsZero": false,
@@ -1017,10 +559,9 @@
         "displayHeaderRow": true,
         "volatile": false,
         "hideDrilledDashboards": true,
-        "hideSharedDashboardsForNonOwner": true,
         "drillToDashboardMenuCaption": "Jump to dashboard",
         "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 3,
+        "drillToDashboardNavigateType": 1,
         "drillToDashboardNavigateTypePivot": 2,
         "drillToDashboardNavigateTypeCharts": 1,
         "drillToDashboardNavigateTypeOthers": 3,
@@ -1032,17 +573,9 @@
         "showFolderNameOnMenuSelection": false,
         "resetDashFiltersAfterJTD": false,
         "sameCubeRestriction": true,
-        "showJTDIcon": true,
-        "sendPieChartMeasureFiltersOnClick": true,
-        "forceZeroInsteadNull": false,
-        "mergeTargetDashboardFilters": false,
-        "drillToDashboardByName": false
+        "showJTDIcon": true
       },
       "realTimeRefreshing": false,
-      "drawing": true,
-      "viewState": {
-        "activeTab": "design"
-      },
       "options": {
         "dashboardFiltersMode": "filter",
         "selector": false,
@@ -1051,22 +584,21 @@
         "autoUpdateOnEveryChange": true,
         "supportsHierarchies": false
       },
-      "dashboardid": "5f624193993ff1002d46e06d"
+      "dashboardid": "5fdcb651cf5cf13ea87ea9c2"
     },
     {
-      "title": "Products' profit",
-      "subtype": "bar/classic",
-      "oid": "5f637a95993ff1002d46e444",
+      "title": "",
+      "subtype": "column/classic",
+      "oid": "5fdcb776cf5cf13ea87ea9ce",
       "desc": null,
       "source": null,
       "datasource": {
-        "fullname": "localhost/exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-        "id": "localhost_aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
+        "title": "Sample Retail",
+        "fullname": "LocalHost/Sample Retail",
+        "id": "aLOCALHOST_aSAMPLEIAAaRETAIL",
         "address": "LocalHost",
-        "database": "aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-        "live": false,
-        "title": "exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-        "lastBuildTime": "2020-09-17T10:50:38"
+        "database": "aSampleIAAaRetail",
+        "lastBuildTime": "2020-12-16T11:11:56"
       },
       "selection": null,
       "metadata": {
@@ -1080,22 +612,101 @@
             "items": [
               {
                 "jaql": {
-                  "table": "ProductCategory",
-                  "column": "Name",
-                  "dim": "[ProductCategory.Name]",
-                  "datatype": "text",
+                  "table": "DimDate",
+                  "column": "Date",
+                  "dim": "[DimDate.Date (Calendar)]",
+                  "datatype": "datetime",
                   "merged": true,
-                  "title": "Product category"
+                  "level": "months",
+                  "title": "Months em Date"
                 },
-                "activeHierarchy": {
-                  "_id": "5f6379e5993ff1002d46e43b",
-                  "title": "Product"
+                "format": {
+                  "mask": {
+                    "years": "yyyy",
+                    "quarters": "yyyy Q",
+                    "months": "MM/yyyy",
+                    "weeks": "ww yyyy",
+                    "days": "shortDate",
+                    "minutes": "HH:mm",
+                    "isdefault": true
+                  },
+                  "members": {
+                    "09/2011": {
+                      "color": "#1a9092",
+                      "title": "09/2011",
+                      "sortData": "2011-09-01T00:00:00",
+                      "cachedColor": "#1a9092",
+                      "total": 4193,
+                      "colorIndex": 0,
+                      "colored": true,
+                      "inResultSetLength": 6,
+                      "inResultset": true
+                    },
+                    "10/2011": {
+                      "color": "#2dd8db",
+                      "title": "10/2011",
+                      "sortData": "2011-10-01T00:00:00",
+                      "cachedColor": "#2dd8db",
+                      "total": 228,
+                      "colorIndex": 0,
+                      "colored": true,
+                      "inResultSetLength": 6,
+                      "inResultset": true
+                    },
+                    "11/2011": {
+                      "color": "#37fcff",
+                      "title": "11/2011",
+                      "sortData": "2011-11-01T00:00:00",
+                      "cachedColor": "#37fcff",
+                      "total": 3,
+                      "colorIndex": 0,
+                      "colored": true,
+                      "inResultSetLength": 6,
+                      "inResultset": true
+                    },
+                    "12/2011": {
+                      "color": "#29c6c9",
+                      "title": "12/2011",
+                      "sortData": "2011-12-01T00:00:00",
+                      "cachedColor": "#29c6c9",
+                      "total": 361.455,
+                      "colorIndex": 0,
+                      "colored": true,
+                      "inResultSetLength": 6,
+                      "inResultset": true
+                    },
+                    "01/2012": {
+                      "color": "#32eaed",
+                      "title": "01/2012",
+                      "sortData": "2012-01-01T00:00:00",
+                      "cachedColor": "#32eaed",
+                      "total": 49,
+                      "colorIndex": 0,
+                      "colored": true,
+                      "inResultSetLength": 6,
+                      "inResultset": true
+                    },
+                    "02/2012": {
+                      "color": "#24b4b6",
+                      "title": "02/2012",
+                      "sortData": "2012-02-01T00:00:00",
+                      "cachedColor": "#24b4b6",
+                      "total": 2028,
+                      "colorIndex": 0,
+                      "colored": true,
+                      "inResultSetLength": 6,
+                      "inResultset": true
+                    }
+                  }
                 },
-                "panel": "rows",
                 "field": {
-                  "id": "[ProductCategory.Name]",
+                  "id": "[DimDate.Date (Calendar)]_years",
                   "index": 0
-                }
+                },
+                "hierarchies": [
+                  "calendar",
+                  "calendar - weeks"
+                ]
               }
             ]
           },
@@ -1104,52 +715,35 @@
             "items": [
               {
                 "jaql": {
-                  "type": "measure",
-                  "formula": "[CD725-233] - [4A04C-0A7]",
-                  "context": {
-                    "[4A04C-0A7]": {
-                      "table": "PurchaseOrderDetail",
-                      "column": "LineTotal",
-                      "dim": "[PurchaseOrderDetail.LineTotal]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total LineTotal"
-                    },
-                    "[CD725-233]": {
-                      "table": "SalesOrderDetail",
-                      "column": "LineTotal",
-                      "dim": "[SalesOrderDetail.LineTotal]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total LineTotal"
-                    }
-                  },
-                  "title": "Profit"
+                  "table": "Fact_Sale_orders",
+                  "column": "OrderRevenue",
+                  "dim": "[Fact_Sale_orders.OrderRevenue]",
+                  "datatype": "numeric",
+                  "agg": "sum",
+                  "title": "Revenue"
                 },
                 "format": {
                   "mask": {
+                    "type": "number",
                     "abbreviations": {
                       "t": true,
                       "b": true,
                       "m": true,
-                      "k": false
+                      "k": true
                     },
+                    "separated": true,
                     "decimals": "auto",
-                    "currency": {
-                      "symbol": "$",
-                      "position": "pre"
-                    }
+                    "isdefault": true
+                  },
+                  "color_bkp": {
+                    "color": "#25CED1",
+                    "type": "color"
                   },
                   "color": {
-                    "color": "#00cee6",
+                    "color": "#25CED1",
                     "type": "color"
                   }
-                },
-                "field": {
-                  "id": "[36960-59A]-[8D752-21D]",
-                  "index": 1
-                },
-                "panel": "measures"
+                }
               }
             ]
           },
@@ -1163,16 +757,16 @@
           }
         ]
       },
-      "type": "chart/bar",
+      "type": "chart/column",
       "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
       "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
       "style": {
         "legend": {
           "enabled": true,
-          "position": "top"
+          "position": "bottom"
         },
         "seriesLabels": {
-          "enabled": true,
+          "enabled": false,
           "rotation": 0,
           "labels": {
             "enabled": false,
@@ -1199,7 +793,7 @@
           "x2Title": {
             "enabled": false
           },
-          "gridLines": false,
+          "gridLines": true,
           "isIntervalEnabled": false
         },
         "yAxis": {
@@ -1207,7 +801,7 @@
           "enabled": true,
           "ticks": true,
           "labels": {
-            "enabled": false,
+            "enabled": true,
             "rotation": 0
           },
           "title": {
@@ -1233,468 +827,6 @@
           "logarithmic": false,
           "isIntervalEnabled": true,
           "hideMinMax": false
-        },
-        "dataLimits": {
-          "seriesCapacity": 50,
-          "categoriesCapacity": 100000
-        },
-        "navigator": {
-          "enabled": true
-        },
-        "narration": {
-          "enabled": false,
-          "display": "above",
-          "format": "bullets",
-          "verbosity": "medium",
-          "up_sentiment": "good",
-          "aggregation": "sum",
-          "labels": [
-            {
-              "id": "product_category",
-              "title": "Product category",
-              "singular": "Product category",
-              "plural": "Product category"
-            }
-          ]
-        }
-      },
-      "instanceid": "25220-CFC9-DF",
-      "queryStartTime": "2020-09-22T16:29:03",
-      "drawing": true,
-      "disableSelctor": false,
-      "widgetTimingLoged": false,
-      "continuousDates": false,
-      "nullAsZero": false,
-      "forcedRedraw": false,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "drilledDashboardsFolderPrefix": "",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "hideSharedDashboardsForNonOwner": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": false,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false,
-        "sameCubeRestriction": true,
-        "showJTDIcon": true,
-        "sendPieChartMeasureFiltersOnClick": true,
-        "forceZeroInsteadNull": false,
-        "mergeTargetDashboardFilters": false,
-        "drillToDashboardByName": false
-      },
-      "viewState": {
-        "activeTab": "design"
-      },
-      "realTimeRefreshing": false,
-      "options": {
-        "dashboardFiltersMode": "select",
-        "selector": true,
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true,
-        "drillToAnywhere": true,
-        "aiFeatures": [
-          {
-            "id": "pareto_1569481451806",
-            "name": "Pareto",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Roughly 80% of the effects come from 20% of the causes",
-            "isCustomModel": true
-          },
-          {
-            "id": "summary_statistics_1569425202576",
-            "name": "Summary Statistics",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Provide information about your data",
-            "isCustomModel": true
-          },
-          {
-            "id": "cluster_1570673124179",
-            "name": "Clustering",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Grouping a set of objects in such a way that objects in the same group are more similar to each other than to those in other groups",
-            "isCustomModel": true
-          },
-          {
-            "id": "two-tailed_test_1574241584650",
-            "name": "Two-Tailed Test",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "perform two tailed t-test",
-            "isCustomModel": true
-          },
-          {
-            "id": "percentile_curves_1574252861643",
-            "name": "Percentile Curves",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Another way to show distributions",
-            "isCustomModel": true
-          },
-          {
-            "id": "growth_rate_1572222323562",
-            "name": "Growth Rates",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "refer to the percentage change of a specific variable within a specific time period and given a certain context",
-            "isCustomModel": true
-          },
-          {
-            "id": "anomaly",
-            "name": "Anomaly",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Outlier data points detections",
-            "isCustomModel": false
-          },
-          {
-            "id": "forecast",
-            "name": "What-If Analysis",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {
-              "hasTargetVar": true,
-              "targetVar": {
-                "targetVarPaneActive": false,
-                "sectionTitle": "Target Value",
-                "options": [
-                  "Profit"
-                ],
-                "value": "Profit"
-              }
-            },
-            "description": "Predict the future values of a 2-var-TS, one of which is the target and the\n                    second is explaining variable.\n                    Provide non-symmetric confidence-interval for the above predictions.\n                    Var-Dependence (Score) - the strength of the influence of the explaining\n                    variable on the target one.\n                    XAI (model weights etc)",
-            "isCustomModel": false
-          },
-          {
-            "id": "local_estimates",
-            "name": "Local Estimate",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Locally (using before and after time series points) estimating the mean of the time series",
-            "isCustomModel": false
-          },
-          {
-            "id": "trend",
-            "name": "Trend",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Detect (if exists) Trend-Break-Points and connect those with a trend line",
-            "isCustomModel": false
-          }
-        ],
-        "previousScrollerLocation": {
-          "min": 0,
-          "max": 3
-        },
-        "selectorLocked": false
-      },
-      "dashboardid": "5f624193993ff1002d46e06d",
-      "questQueryResult": {
-        "isActive": false,
-        "isPending": false,
-        "model": ""
-      }
-    },
-    {
-      "title": "Purchase cost x Sales x Profit across time",
-      "subtype": "column/stackedcolumn",
-      "oid": "5f689d8c993ff1002d46ed1d",
-      "desc": null,
-      "source": null,
-      "datasource": {
-        "fullname": "localhost/exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-        "id": "localhost_aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-        "address": "LocalHost",
-        "database": "aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-        "live": false,
-        "title": "exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-        "lastBuildTime": "2020-09-17T17:58:18"
-      },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "all": false
-        },
-        "panels": [
-          {
-            "name": "categories",
-            "items": [
-              {
-                "jaql": {
-                  "table": "DimDate",
-                  "column": "Date",
-                  "dim": "[DimDate.Date (Calendar)]",
-                  "datatype": "datetime",
-                  "merged": true,
-                  "level": "months",
-                  "title": "Months in Date"
-                },
-                "field": {
-                  "id": "[DimDate.Date (Calendar)]_months",
-                  "index": 0
-                },
-                "format": {
-                  "mask": {
-                    "years": "yyyy",
-                    "quarters": "yyyy Q",
-                    "months": "MM/yyyy",
-                    "weeks": "ww yyyy",
-                    "days": "shortDate",
-                    "minutes": "HH:mm",
-                    "isdefault": true
-                  }
-                },
-                "hierarchies": [
-                  "calendar",
-                  "calendar - weeks"
-                ]
-              }
-            ]
-          },
-          {
-            "name": "values",
-            "items": [
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "[35C18-9C2]",
-                  "context": {
-                    "[35C18-9C2]": {
-                      "table": "PurchaseOrderDetail",
-                      "column": "LineTotal",
-                      "dim": "[PurchaseOrderDetail.LineTotal]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total LineTotal"
-                    }
-                  },
-                  "sort": "desc",
-                  "title": "Purchase cost"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  },
-                  "color": {
-                    "color": "#00cee6",
-                    "type": "color"
-                  }
-                },
-                "field": {
-                  "id": "[PurchaseOrderHeader.TotalDue]_sum",
-                  "index": 1
-                }
-              },
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "[88E84-270]",
-                  "context": {
-                    "[88E84-270]": {
-                      "table": "SalesOrderDetail",
-                      "column": "LineTotal",
-                      "dim": "[SalesOrderDetail.LineTotal]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total LineTotal"
-                    }
-                  },
-                  "title": "Sales"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  },
-                  "color": {
-                    "color": "#9b9bd7",
-                    "type": "color"
-                  }
-                },
-                "field": {
-                  "id": "[SalesOrderHeader.TotalDue]_sum",
-                  "index": 2
-                }
-              },
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "[19F1D-CB9] - [B73B4-F00]",
-                  "context": {
-                    "[B73B4-F00]": {
-                      "table": "PurchaseOrderDetail",
-                      "column": "LineTotal",
-                      "dim": "[PurchaseOrderDetail.LineTotal]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total LineTotal"
-                    },
-                    "[19F1D-CB9]": {
-                      "table": "SalesOrderDetail",
-                      "column": "LineTotal",
-                      "dim": "[SalesOrderDetail.LineTotal]",
-                      "datatype": "numeric",
-                      "agg": "sum",
-                      "title": "Total LineTotal"
-                    }
-                  },
-                  "title": "Profit"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  },
-                  "color": {
-                    "color": "#6EDA55",
-                    "type": "color"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "name": "break by",
-            "items": []
-          },
-          {
-            "name": "filters",
-            "items": []
-          }
-        ]
-      },
-      "type": "chart/column",
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "style": {
-        "legend": {
-          "enabled": true,
-          "position": "top"
-        },
-        "seriesLabels": {
-          "enabled": true,
-          "rotation": 0,
-          "labels": {
-            "enabled": true,
-            "types": {
-              "count": false,
-              "percentage": false,
-              "relative": true,
-              "totals": true
-            },
-            "stacked": true,
-            "stackedPercentage": false
-          }
-        },
-        "xAxis": {
-          "enabled": true,
-          "ticks": true,
-          "labels": {
-            "enabled": true,
-            "rotation": 0
-          },
-          "title": {
-            "enabled": false
-          },
-          "x2Title": {
-            "enabled": false
-          },
-          "gridLines": true,
-          "isIntervalEnabled": false
-        },
-        "yAxis": {
-          "inactive": false,
-          "enabled": true,
-          "ticks": true,
-          "labels": {
-            "enabled": true,
-            "rotation": 0
-          },
-          "title": {
-            "enabled": false
-          },
-          "gridLines": true,
-          "isIntervalEnabled": true,
-          "hideMinMax": false,
-          "logarithmic": false
-        },
-        "y2Axis": {
-          "inactive": true,
-          "enabled": true,
-          "ticks": true,
-          "labels": {
-            "enabled": true,
-            "rotation": 0
-          },
-          "title": {
-            "enabled": false
-          },
-          "gridLines": false,
-          "isIntervalEnabled": true,
-          "hideMinMax": false,
-          "logarithmic": false
         },
         "navigator": {
           "enabled": true
@@ -1720,15 +852,15 @@
           ]
         }
       },
-      "instanceid": "BB1E3-E427-9B",
-      "queryStartTime": "2020-09-23T09:18:56",
+      "instanceid": "5A8A3-7D12-C1",
+      "queryStartTime": "2020-12-18T11:06:42",
       "drawing": true,
       "disableSelctor": false,
       "widgetTimingLoged": false,
       "continuousDates": false,
       "nullAsZero": false,
-      "minDate": 1207018800000,
-      "maxDate": 1367377200000,
+      "minDate": 1314846000000,
+      "maxDate": 1328061600000,
       "tickLevel": "month",
       "forcedRedraw": false,
       "drillToDashboardConfig": {
@@ -1774,16 +906,6 @@
         },
         "aiFeatures": [
           {
-            "id": "pareto_1569481451806",
-            "name": "Pareto",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Roughly 80% of the effects come from 20% of the causes",
-            "isCustomModel": true
-          },
-          {
             "id": "summary_statistics_1569425202576",
             "name": "Summary Statistics",
             "isEnabled": false,
@@ -1791,6 +913,16 @@
             "actions": {},
             "options": {},
             "description": "Provide information about your data",
+            "isCustomModel": true
+          },
+          {
+            "id": "pareto_1569481451806",
+            "name": "Pareto",
+            "isEnabled": false,
+            "isPin": false,
+            "actions": {},
+            "options": {},
+            "description": "Roughly 80% of the effects come from 20% of the causes",
             "isCustomModel": true
           },
           {
@@ -1855,11 +987,9 @@
                 "targetVarPaneActive": false,
                 "sectionTitle": "Target Value",
                 "options": [
-                  "Purchase cost",
-                  "Sales",
-                  "Profit"
+                  "Revenue"
                 ],
-                "value": "Purchase cost"
+                "value": "Revenue"
               }
             },
             "description": "Predict the future values of a 2-var-TS, one of which is the target and the\n                    second is explaining variable.\n                    Provide non-symmetric confidence-interval for the above predictions.\n                    Var-Dependence (Score) - the strength of the influence of the explaining\n                    variable on the target one.\n                    XAI (model weights etc)",
@@ -1887,604 +1017,56 @@
           }
         ]
       },
-      "dashboardid": "5f624193993ff1002d46e06d"
-    },
-    {
-      "title": "Cost x List price history",
-      "subtype": "line/basic",
-      "oid": "5f68a023993ff1002d46ed23",
-      "desc": null,
-      "source": null,
-      "datasource": {
-        "fullname": "localhost/exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-        "id": "localhost_aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-        "address": "LocalHost",
-        "database": "aexamXwAa001LgAa2XwAaBluemetricsXwAabernardoLgAatrevizanQAAabluemetricsLgAacomLgAabr",
-        "live": false,
-        "title": "exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br",
-        "lastBuildTime": "2020-09-21T09:28:51"
-      },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "all": false
-        },
-        "panels": [
-          {
-            "name": "x-axis",
-            "items": [
-              {
-                "jaql": {
-                  "table": "DimDate",
-                  "column": "Date",
-                  "dim": "[DimDate.Date (Calendar)]",
-                  "datatype": "datetime",
-                  "merged": true,
-                  "level": "months",
-                  "title": "Months in Date"
-                },
-                "field": {
-                  "id": "[DimDate.Date (Calendar)]_months",
-                  "index": 0
-                },
-                "format": {
-                  "mask": {
-                    "years": "yyyy",
-                    "quarters": "yyyy Q",
-                    "months": "MM/yyyy",
-                    "weeks": "ww yyyy",
-                    "days": "shortDate",
-                    "minutes": "HH:mm",
-                    "isdefault": true
-                  }
-                },
-                "hierarchies": [
-                  "calendar",
-                  "calendar - weeks"
-                ]
-              }
-            ]
-          },
-          {
-            "name": "values",
-            "items": [
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "AVG([D48A7-9F4])",
-                  "context": {
-                    "[D48A7-9F4]": {
-                      "table": "ProductCostHistory",
-                      "column": "StandardCost",
-                      "dim": "[ProductCostHistory.StandardCost]",
-                      "datatype": "numeric",
-                      "title": "Standard Cost"
-                    }
-                  },
-                  "title": "Average purchase cost"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  },
-                  "color": {
-                    "color": "#00cee6",
-                    "type": "color"
-                  }
-                },
-                "statisticalModels": {
-                  "trend": {
-                    "isEnabled": true,
-                    "isViewerDisabled": false,
-                    "trendType": "logarithmic"
-                  }
-                }
-              },
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "AVG([65985-DD0])",
-                  "context": {
-                    "[65985-DD0]": {
-                      "table": "ProductListPriceHistory",
-                      "column": "ListPrice",
-                      "dim": "[ProductListPriceHistory.ListPrice]",
-                      "datatype": "numeric",
-                      "title": "List Price"
-                    }
-                  },
-                  "title": "Average list price"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": true
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  },
-                  "color": {
-                    "color": "#9b9bd7",
-                    "type": "color"
-                  }
-                },
-                "statisticalModels": {
-                  "trend": {
-                    "isEnabled": true,
-                    "isViewerDisabled": true,
-                    "trendType": "linear"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "name": "break by",
-            "items": []
-          },
-          {
-            "name": "filters",
-            "items": []
-          }
-        ]
-      },
-      "type": "chart/line",
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "style": {
-        "lineWidth": {
-          "width": "thick"
-        },
-        "legend": {
-          "enabled": true,
-          "position": "top"
-        },
-        "seriesLabels": {
-          "enabled": false,
-          "rotation": 0
-        },
-        "markers": {
-          "enabled": false,
-          "fill": "filled",
-          "size": "small"
-        },
-        "xAxis": {
-          "enabled": true,
-          "ticks": true,
-          "labels": {
-            "enabled": true,
-            "rotation": 0
-          },
-          "title": {
-            "enabled": false
-          },
-          "x2Title": {
-            "enabled": false
-          },
-          "gridLines": true,
-          "isIntervalEnabled": false
-        },
-        "yAxis": {
-          "inactive": false,
-          "enabled": true,
-          "ticks": true,
-          "labels": {
-            "enabled": true,
-            "rotation": 0
-          },
-          "title": {
-            "enabled": false
-          },
-          "gridLines": true,
-          "logarithmic": false,
-          "isIntervalEnabled": true
-        },
-        "y2Axis": {
-          "inactive": true,
-          "enabled": true,
-          "ticks": true,
-          "labels": {
-            "enabled": true,
-            "rotation": 0
-          },
-          "title": {
-            "enabled": false
-          },
-          "gridLines": false,
-          "logarithmic": false,
-          "isIntervalEnabled": true
-        },
-        "navigator": {
-          "enabled": true
-        },
-        "dataLimits": {
-          "seriesCapacity": 50,
-          "categoriesCapacity": 100000
-        },
-        "narration": {
-          "enabled": false,
-          "display": "above",
-          "format": "bullets",
-          "verbosity": "medium",
-          "up_sentiment": "good",
-          "aggregation": "sum",
-          "labels": [
-            {
-              "id": "months",
-              "title": "months",
-              "singular": "months",
-              "plural": "months"
-            }
-          ]
-        }
-      },
-      "instanceid": "802AC-488B-CF",
-      "queryStartTime": "2020-09-22T16:28:38",
-      "drawing": true,
-      "disableSelctor": false,
-      "widgetTimingLoged": false,
-      "continuousDates": false,
-      "nullAsZero": false,
-      "minDate": 1367377200000,
-      "maxDate": 1367377200000,
-      "tickLevel": "month",
-      "forcedRedraw": false,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "drilledDashboardsFolderPrefix": "",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "hideSharedDashboardsForNonOwner": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": false,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false,
-        "sameCubeRestriction": true,
-        "showJTDIcon": true,
-        "sendPieChartMeasureFiltersOnClick": true,
-        "forceZeroInsteadNull": false,
-        "mergeTargetDashboardFilters": false,
-        "drillToDashboardByName": false
-      },
-      "realTimeRefreshing": false,
-      "options": {
-        "dashboardFiltersMode": "select",
-        "selector": true,
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true,
-        "drillToAnywhere": true,
-        "previousScrollerLocation": {
-          "min": -0.5,
-          "max": 0.5
-        },
-        "aiFeatures": [
-          {
-            "id": "pareto_1569481451806",
-            "name": "Pareto",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Roughly 80% of the effects come from 20% of the causes",
-            "isCustomModel": true
-          },
-          {
-            "id": "summary_statistics_1569425202576",
-            "name": "Summary Statistics",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Provide information about your data",
-            "isCustomModel": true
-          },
-          {
-            "id": "cluster_1570673124179",
-            "name": "Clustering",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Grouping a set of objects in such a way that objects in the same group are more similar to each other than to those in other groups",
-            "isCustomModel": true
-          },
-          {
-            "id": "two-tailed_test_1574241584650",
-            "name": "Two-Tailed Test",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "perform two tailed t-test",
-            "isCustomModel": true
-          },
-          {
-            "id": "percentile_curves_1574252861643",
-            "name": "Percentile Curves",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Another way to show distributions",
-            "isCustomModel": true
-          },
-          {
-            "id": "growth_rate_1572222323562",
-            "name": "Growth Rates",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "refer to the percentage change of a specific variable within a specific time period and given a certain context",
-            "isCustomModel": true
-          },
-          {
-            "id": "anomaly",
-            "name": "Anomaly",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Outlier data points detections",
-            "isCustomModel": false
-          },
-          {
-            "id": "forecast",
-            "name": "What-If Analysis",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {
-              "hasTargetVar": true,
-              "targetVar": {
-                "targetVarPaneActive": false,
-                "sectionTitle": "Target Value",
-                "options": [
-                  "Average purchase cost",
-                  "Average list price"
-                ],
-                "value": "Average purchase cost"
-              }
-            },
-            "description": "Predict the future values of a 2-var-TS, one of which is the target and the\n                    second is explaining variable.\n                    Provide non-symmetric confidence-interval for the above predictions.\n                    Var-Dependence (Score) - the strength of the influence of the explaining\n                    variable on the target one.\n                    XAI (model weights etc)",
-            "isCustomModel": false
-          },
-          {
-            "id": "local_estimates",
-            "name": "Local Estimate",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Locally (using before and after time series points) estimating the mean of the time series",
-            "isCustomModel": false
-          },
-          {
-            "id": "trend",
-            "name": "Trend",
-            "isEnabled": false,
-            "isPin": false,
-            "actions": {},
-            "options": {},
-            "description": "Detect (if exists) Trend-Break-Points and connect those with a trend line",
-            "isCustomModel": false
-          }
-        ]
-      },
-      "dashboardid": "5f624193993ff1002d46e06d",
-      "canEditFilters": true,
-      "viewState": {
-        "activeTab": "filters"
-      }
+      "dashboardid": "5fdcb651cf5cf13ea87ea9c2"
     }
   ],
-  "previewLayout": [
-    {
-      "type": "previewLayout",
-      "format": "A4",
-      "orientation": "portrait",
-      "layout": "asis",
-      "headerSize": "compact",
-      "title": true,
-      "elasticubeBuilt": true,
-      "elasticubeName": true,
-      "filters": true,
-      "logo": false,
-      "pageNumbers": true,
-      "pages": [
-        {
-          "columns": [
-            {
-              "width": 100,
-              "cells": [
-                {
-                  "subcells": [
-                    {
-                      "elements": [
-                        {
-                          "minHeight": 64,
-                          "maxHeight": 1024,
-                          "height": 234,
-                          "widgetid": "5f636b57993ff1002d46e431"
-                        }
-                      ],
-                      "width": 32.11678832116788
-                    },
-                    {
-                      "elements": [
-                        {
-                          "minHeight": 64,
-                          "maxHeight": 1024,
-                          "height": 234,
-                          "widgetid": "5f636c36993ff1002d46e433"
-                        }
-                      ],
-                      "width": 34.20229405630866
-                    },
-                    {
-                      "elements": [
-                        {
-                          "minHeight": 64,
-                          "maxHeight": 1024,
-                          "height": 234,
-                          "widgetid": "5f636d2a993ff1002d46e435"
-                        }
-                      ],
-                      "width": 33.68091762252346
-                    }
-                  ]
-                },
-                {
-                  "subcells": [
-                    {
-                      "elements": [
-                        {
-                          "minHeight": 96,
-                          "maxHeight": 1024,
-                          "height": 398,
-                          "widgetid": "5f637a95993ff1002d46e444"
-                        }
-                      ],
-                      "width": 100
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "columns": [
-            {
-              "width": 100,
-              "cells": [
-                {
-                  "subcells": [
-                    {
-                      "elements": [
-                        {
-                          "minHeight": 96,
-                          "maxHeight": 1024,
-                          "height": 426,
-                          "widgetid": "5f689d8c993ff1002d46ed1d"
-                        }
-                      ],
-                      "width": 100
-                    }
-                  ]
-                },
-                {
-                  "subcells": [
-                    {
-                      "elements": [
-                        {
-                          "minHeight": 96,
-                          "maxHeight": 1024,
-                          "height": 426,
-                          "widgetid": "5f68a023993ff1002d46ed23"
-                        }
-                      ],
-                      "width": 100
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "savedByButton": "Export",
-      "openPath": "PDF Settings"
-    }
-  ],
-  "allowChangeSubscription": false,
-  "isPublic": null,
-  "subscription": {
-    "isDataChange": true,
-    "type": "onUpdate",
-    "schedule": "* * * * * *",
-    "timezone": 180,
-    "tzName": "America/Sao_Paulo",
-    "context": {
-      "dashboardid": "5f624193993ff1002d46e06d"
-    },
-    "active": true,
-    "executionPerDay": 1,
-    "reportType": {
-      "inline": true
-    },
-    "emailSettings": {
-      "isEmail": true,
-      "isPdf": false
-    },
-    "startAt": "2020-09-23",
-    "subscribe": true
-  },
   "hierarchies": [
     {
-      "_id": "5f6379e5993ff1002d46e43b",
-      "title": "Product",
+      "_id": "5fda15c6e86e063fa0f4802c",
+      "title": "Date > Country > Category",
+      "alwaysIncluded": true,
       "levels": [
         {
-          "title": "Product Category",
-          "table": "ProductCategory",
-          "column": "Name",
-          "datatype": "text",
-          "dim": "[ProductCategory.Name]",
+          "title": "Months in Date",
+          "table": "DimDate",
+          "column": "Date",
+          "datatype": "datetime",
+          "dim": "[DimDate.Date (Calendar)]",
           "index": 0,
-          "_id": "5f6379e5993ff1002d46e43a"
+          "_id": "5fd36be115a18425c02cbb78",
+          "level": "months"
         },
         {
-          "title": "Product Subcategory",
-          "table": "ProductSubcategory",
-          "column": "Name",
+          "title": "CountryName",
+          "table": "DimCountries",
+          "column": "CountryName",
           "datatype": "text",
-          "dim": "[ProductSubcategory.Name]",
+          "dim": "[DimCountries.CountryName]",
           "index": 1,
-          "_id": "5f6379fd993ff1002d46e43e"
+          "_id": "5fd36be815a18425c02cbb7b"
         },
         {
-          "title": "Product",
-          "table": "Product",
-          "column": "Name",
+          "title": "Region",
+          "table": "DimCountries",
+          "column": "Region",
           "datatype": "text",
-          "dim": "[Product.Name]",
+          "dim": "[DimCountries.Region]",
           "index": 2,
-          "_id": "5f637a11993ff1002d46e441"
+          "_id": "5fd36bec15a18425c02cbb7d"
+        },
+        {
+          "title": "CategoryName",
+          "table": "DimProducts",
+          "column": "CategoryName",
+          "datatype": "text",
+          "dim": "[DimProducts.CategoryName]",
+          "index": 3,
+          "_id": "5fd36bf415a18425c02cbb7f"
         }
       ],
-      "cubeId": "5f60b8b387b3c47362f5dfda",
-      "alwaysIncluded": true,
+      "cubeId": "5fce1e572db6c25deec434b0",
       "serverAddress": "LocalHost",
-      "elasticubeTitle": "exam_001.2_Bluemetrics_bernardo.trevizan@bluemetrics.com.br"
+      "elasticubeTitle": "Sample Retail"
     }
   ]
 }

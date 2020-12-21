@@ -5,3 +5,4 @@ from .permission import PermissionTestCase
 from .datasecurity import DataSecurityTestCase
 from .user import UserTestCase
 from .group import GroupTestCase
+from .dashboard import DashboardTestCase
