@@ -38,6 +38,7 @@ $ make api-test
 #### Support files
 In order to test the API functions, you need to supply the following support files:
 
+- `tests/support_files/dashboard.dash`: file created when exporting a dashboard on Sisense
 - `tests/support_files/datasecurity.json`: a list of data security rules
 - `tests/support_files/hierarchy.json`: a list of hierarchy objects
 - `tests/support_files/permission.json`: a list of permission objects
@@ -57,7 +58,8 @@ In order to test the API functions, you need to supply the following support fil
     "token": "<API token>",
     "elasticube": "<Elasticube's name used for testing>",
     "user_email": "<User's e-mail used for testing>",
-    "group_name": "<Group's name used for testing>"
+    "group_name": "<Group's name used for testing>",
+    "dashboard": "<Dashboard's name used for testing>"
 }
 ```
 - `tests/support_files/config/api_v2.json`: a JSON with
