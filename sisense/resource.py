@@ -23,7 +23,7 @@ class Resource:
         :param rjson: (dict) Resource representation.
         :return: (Resource) The new resource
         """
-        return Resource(self._api, rjson)
+        return self.__class__(self._api, rjson)
 
     def save(self, filepath: str):
         """
