@@ -29,6 +29,23 @@ class DashboardTestCase(TestCase):
         self.assertTrue(dashboard.exists(sample.oid))
         self.assertFalse(dashboard.exists('5f624193993ff1002d46e06d'))
 
+    def test_get_shares(self):
+        dashboard = self.sisense.dashboard
+        sample = dashboard.get(name=self.config['dashboard'])
+
+        shares = sample.get_shares()
+        self.assertEqual(len(shares), 1)
+
+    def test_update(self):
+        dashboard = self.sisense.dashboard
+        sample = dashboard.get(name=self.config['dashboard'])
+
+        new_title = 'New title'
+        sample.update(title=new_title)
+
+        sample = dashboard.get(oid=sample.oid)
+        self.assertEqual(sample.title, new_title)
+
     def create(self):
         with open('tests/support_files/dashboard.dash', 'r') as file:
             rjson = json.load(file)

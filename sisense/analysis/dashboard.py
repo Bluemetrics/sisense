@@ -22,7 +22,27 @@ class Dashboard(Resource):
             content = self._api.get('dashboards', query={'name': name, 'parentFolder': folder})
             content = content[0] if len(content) else None
 
-        return Dashboard(self._api, content) if content else None
+        if not content:
+            return None
+
+        result = Dashboard(self._api, content)
+        return result
+
+    def get_shares(self) -> list:
+        """Get shares for the current dashboard."""
+        content = self._api.get(f'dashboards/{self.oid}/shares')
+        return content
+
+    def update(self, **kwargs):
+        """
+        Update the current dashboard information according to the specified parameters.
+        For more information, check "PATCH /dashboards/{id}" on https://sisense.dev/reference/rest/v1.html.
+        """
+        data = kwargs
+        data['oid'] = self.oid
+
+        content = self._api.patch(f'dashboards/{self.oid}', data=data)
+        self.json = content
 
     def exists(self, oid: str = None) -> bool:
         """
@@ -46,6 +66,10 @@ class Dashboard(Resource):
 
         content = self._api.post('dashboards/import/bulk', query=query, data=[self.json])
         return Dashboard(self._api, content['succeded'][0])
+
+    def publish(self):
+        """Publish the current dashboard."""
+        self._api.post(f'dashboards/{self.oid}/publish', query={'force': True})
 
     def delete(self):
         """Delete the current dashboard."""
