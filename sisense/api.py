@@ -103,7 +103,7 @@ class API:
 
     def download(self, uri: str, filepath: str, query: dict = None, headers: dict = None):
         """
-Download file from stream.
+        Download file from stream.
 
         :param uri: (str) Resource identifier.
         :param filepath: (str) Where to save the downloaded file, including file's name.
@@ -114,7 +114,7 @@ Download file from stream.
         headers = self._headers(headers)
         headers.update({'Accept': '*/*'})
 
-        with requests.get(path, params=query, headers=headers, stream=True) as response:
+        with requests.get(path, params=query, headers=headers, stream=True, verify=False) as response:
             self._handle_request_error(response)
 
             with open(filepath, 'wb') as file:
@@ -134,7 +134,7 @@ Download file from stream.
         headers.update({'Accept': '*/*'})
         headers.update({'Content-type': 'multipart/form-data'})
 
-        response = requests.post(path, files=file, params=query, headers=headers)
+        response = requests.post(path, files=file, params=query, headers=headers, verify=False)
         self._handle_request_error(response)
 
     def _headers(self, other: dict) -> dict:

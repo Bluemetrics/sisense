@@ -2,6 +2,7 @@ from .test_case import TestCaseV1 as TestCase
 from sisense.analysis import Dashboard
 import unittest
 import json
+import os
 
 
 class DashboardTestCase(TestCase):
@@ -46,17 +47,34 @@ class DashboardTestCase(TestCase):
         sample = dashboard.get(oid=sample.oid)
         self.assertEqual(sample.title, new_title)
 
+        new_title = self.config['dashboard']
+        sample.update(title=new_title)
+
+    def test_do_export(self):
+        filepath = 'test_export.dash'
+
+        dashboard = self.sisense.dashboard
+        sample = dashboard.get(name=self.config['dashboard'])
+        sample.do_export(filepath)
+
+        same_sample = sample.load(filepath)
+
+        self.assertEqual(sample.oid, same_sample.oid)
+        self.assertEqual(sample.title, same_sample.title)
+        self.assertEqual(sample.parentFolder, same_sample.parentFolder)
+
+        os.system(f'rm {filepath}')
+
     def create(self):
+        dashboard = self.sisense.dashboard
+        new_dash = dashboard.do_import('tests/support_files/dashboard.dash', 'overwrite')
+
         with open('tests/support_files/dashboard.dash', 'r') as file:
             rjson = json.load(file)
-
-        dashboard = self.sisense.dashboard.new(rjson)
-        new_dash = dashboard.do_import('overwrite')
 
         same_dash = dashboard.get(oid=new_dash.oid)
         self.assertEqual(same_dash.oid, rjson['oid'])
         self.assertEqual(same_dash.title, rjson['title'])
-        self.assertEqual(same_dash.parentFolder, rjson['parentFolder'])
 
     def delete(self):
         dashboard = self.sisense.dashboard

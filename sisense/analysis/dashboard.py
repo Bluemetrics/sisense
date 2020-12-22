@@ -1,4 +1,5 @@
 from sisense.resource import Resource
+import json
 
 
 class Dashboard(Resource):
@@ -55,17 +56,36 @@ class Dashboard(Resource):
         content = self._api.get(f'dashboards/{oid}/exists')
         return content['exists']
 
-    def do_import(self, action: str = 'duplicate') -> Resource:
+    def do_import(self, filepath: str, action: str = 'duplicate', folder: str = None) -> Resource:
         """
-        Import the current dashboard.
+        Import dashboard from file in filepath.
 
+        :param filepath: (str) Relative/absolute path to a .dash file.
         :param action: (str, default 'duplicate') Determines if the existing dashboard should be overwritten. Possible values : skip, overwrite, duplicate.
+        :param folder: (str, default None) Folder's ID where the dashboard should be imported.
         :return: (Dashboard) The new dashboard.
         """
-        query = {'action': action, 'importFolder': self.parentFolder}
+        with open(filepath, 'r') as file:
+            rjson = json.load(file)
 
-        content = self._api.post('dashboards/import/bulk', query=query, data=[self.json])
+        query = {'action': action, 'importFolder': folder}
+        content = self._api.post('dashboards/import/bulk', query=query, data=[rjson])
+
         return Dashboard(self._api, content['succeded'][0])
+
+    def do_export(self, filepath: str, filetype: str = 'dash', **kwargs):
+        """
+        Export the current dashboard.
+
+        :param filepath: (str) Where to save the file including file's name and extension.
+        :param filetype: (str, default 'dash') Type of export. Possible values: dash, png, pdf.
+
+        For more details on other parameters, check:
+        <GET /dashboards/{id}/export/*> on https://sisense.dev/reference/rest/v1.html.
+        """
+        content = self._api.get(f'dashboards/{self.oid}/export/{filetype}', query=kwargs)
+        dashboard = Dashboard(self._api, content)
+        dashboard.save(filepath)
 
     def publish(self):
         """Publish the current dashboard."""

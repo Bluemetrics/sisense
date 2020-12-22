@@ -31,9 +31,19 @@ class Resource:
 
         :param filepath: (str) Relative/absolute path, including filename.
         """
-        filepath = filepath if filepath.endswith('.json') else f'{filepath}.json'
-        with open(filepath, 'r') as file:
+        with open(filepath, 'w') as file:
             json.dump(self.json, file)
+
+    def load(self, filepath: str) -> object:
+        """
+        Load the object representation.
+
+        :param filepath: (str) Relative/absolute path to a .json file.
+        """
+        with open(filepath, 'r') as file:
+            rjson = json.load(file)
+
+        return self.new(rjson)
 
     def fix_shares(self) -> object:
         """
