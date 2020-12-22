@@ -59,7 +59,8 @@ In order to test the API functions, you need to supply the following support fil
     "elasticube": "<Elasticube's name used for testing>",
     "user_email": "<User's e-mail used for testing>",
     "group_name": "<Group's name used for testing>",
-    "dashboard": "<Dashboard's name used for testing>"
+    "dashboard": "<Dashboard's name used for testing>",
+    "folder": "<Folder's name used for testing>"
 }
 ```
 - `tests/support_files/config/api_v2.json`: a JSON with
