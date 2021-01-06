@@ -89,7 +89,7 @@ class Dashboard(Resource):
 
     def publish(self):
         """Publish the current dashboard."""
-        self._api.post(f'dashboards/{self.oid}/publish', query={'force': True})
+        self._api.post(f'dashboards/{self.oid}/publish')
 
     def delete(self):
         """Delete the current dashboard."""
