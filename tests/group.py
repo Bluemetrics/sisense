@@ -12,6 +12,20 @@ class GroupTestCase(TestCase):
         self.assertEqual(group._id, same._id)
         self.assertEqual(group.name, same.name)
 
+    def test_all(self):
+        group = self.sisense.group.get(self.config['group_name'])
+        groups = self.sisense.group.all(name=self.config['group_name'])
+
+        self.assertEqual(len(groups), 1)
+        self.assertEqual(groups[0].name, group.name)
+        self.assertEqual(groups[0]._id, group._id)
+
+        groups = self.sisense.group.all()
+        self.assertGreater(len(groups), 1)
+
+        for g in groups:
+            self.assertIsInstance(g, Group)
+
     def create(self):
         group = self.sisense.group.create(self.config['group_name'])
 

@@ -20,6 +20,28 @@ class Group(Resource):
 
         return Group(self._api, content) if content else None
 
+    def all(self, **kwargs) -> list:
+        """
+        Get all groups.
+
+        :param kwargs: Positional optional arguments used to filter users:
+            - name: (str) Group's name.
+            - mail: (str) Group's email.
+            - roleId: (str) Role ID.
+            - origin: ('ad', 'sisense') User's origin.
+            - ids: (list) Groups' IDs.
+            - fields: (list) Which fields to return.
+            - sort: (str) Field in which the results should be sorted.
+            - skip: (int) Number of results to skip from start.
+            - limit: (int) Number of results returned.
+            - expand: (list) Fields that should be expanded (substitutes their IDs with actual objects).
+        :return: (list) of Group objects.
+        """
+        content = self._api.get('groups', query=kwargs)
+        content = [Group(self._api, rjson) for rjson in content]
+
+        return content
+
     def create(self, name: str) -> Resource:
         """
         Create a new group.

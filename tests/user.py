@@ -12,6 +12,20 @@ class UserTestCase(TestCase):
         self.assertEqual(user._id, same._id)
         self.assertEqual(user.email, same.email)
 
+    def test_all(self):
+        user = self.sisense.user.get(self.config['user_email'])
+        users = self.sisense.user.all(email=self.config['user_email'])
+
+        self.assertEqual(len(users), 1)
+        self.assertEqual(users[0].email, user.email)
+        self.assertEqual(users[0]._id, user._id)
+
+        users = self.sisense.user.all()
+        self.assertGreater(len(users), 1)
+
+        for u in users:
+            self.assertIsInstance(u, User)
+
     def create(self):
         name = 'DevTeam'
         user = self.sisense.user.create(self.config['user_email'], userName=name, firstName=name + ' (1)')
