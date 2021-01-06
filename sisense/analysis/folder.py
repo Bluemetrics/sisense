@@ -13,7 +13,7 @@ class Folder(Resource):
         content = self._api.get(f'folders/{oid}')
         return Folder(self._api, content)
 
-    def get_all(self) -> list:
+    def all(self) -> list:
         """
         Get all folders.
 
