@@ -1,4 +1,5 @@
 from sisense.resource import Resource
+from .user import User
 
 
 class Group(Resource):
@@ -57,3 +58,29 @@ class Group(Resource):
     def delete(self):
         """Delete the current group."""
         self._api.delete(f'groups/{self._id}')
+
+    def add_user(self, user: User):
+        """
+        Add a user to the current group.
+        If user is already in the group, do nothing.
+
+        :param user: (User) User to be added.
+        """
+        groups = user.groups if hasattr(user, 'groups') else []
+
+        if self._id not in groups:
+            groups.append(self._id)
+            user.update(groups=groups)
+
+    def remove_user(self, user: User):
+        """
+        Remove a user from the current group.
+        If user isn't in the group, do nothing.
+
+        :param user: (User) User to be removed.
+        """
+        groups = user.groups if hasattr(user, 'groups') else []
+
+        if self._id in groups:
+            groups = list(set(groups) - {self._id})
+            user.update(groups=groups)

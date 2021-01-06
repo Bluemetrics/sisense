@@ -26,6 +26,14 @@ class UserTestCase(TestCase):
         for u in users:
             self.assertIsInstance(u, User)
 
+    def test_update(self):
+        user = self.sisense.user.get(self.config['user_email'])
+        user.update(firstName='Dev', lastName='Team')
+
+        user = self.sisense.user.get(self.config['user_email'])
+        self.assertEqual(user.firstName, 'Dev')
+        self.assertEqual(user.lastName, 'Team')
+
     def create(self):
         name = 'DevTeam'
         user = self.sisense.user.create(self.config['user_email'], userName=name, firstName=name + ' (1)')

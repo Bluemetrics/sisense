@@ -26,6 +26,31 @@ class GroupTestCase(TestCase):
         for g in groups:
             self.assertIsInstance(g, Group)
 
+    def test_add_user(self):
+        group = self.sisense.group.get(self.config['group_name'])
+        user = self.sisense.user.create(self.config['user_email'])
+
+        group.add_user(user)
+        user = self.sisense.user.get(self.config['user_email'])
+
+        user.delete()
+        self.assertEqual(user.groups[0], group._id)
+
+    def test_remove_user(self):
+        group = self.sisense.group.get(self.config['group_name'])
+        user = self.sisense.user.create(self.config['user_email'])
+
+        group.add_user(user)
+        user = self.sisense.user.get(self.config['user_email'])
+        self.assertEqual(user.groups[0], group._id)
+
+        group.remove_user(user)
+
+        user = self.sisense.user.get(self.config['user_email'])
+        user.delete()
+
+        self.assertEqual(len(user.groups), 0)
+
     def create(self):
         group = self.sisense.group.create(self.config['group_name'])
 

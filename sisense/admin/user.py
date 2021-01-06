@@ -66,6 +66,25 @@ class User(Resource):
         content = self._api.post('users', data=data)
         return User(self._api, content)
 
+    def update(self, **kwargs):
+        """
+        Update the current user.
+
+        At least one argument must be set.
+
+        :param kwargs: Positional optional arguments:
+            - email: (str),
+            - userName: (str) Username.
+            - firstName: (str) First name.
+            - lastName: (str) Last name.
+            - roleId: (str) Role's ID.
+            - groups: (list) Group's ID in which user is part of.
+            - preferences: (dict) User's preferences such as 'localeId'.
+            - uiSettings: (dict) User's UI settings.
+        """
+        content = self._api.patch(f'users/{self._id}', data=kwargs)
+        self.json = content
+
     def delete(self):
         """Delete the current user."""
         self._api.delete(f'users/{self._id}')
