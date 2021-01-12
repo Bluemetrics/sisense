@@ -12,6 +12,14 @@ sisense.data.build module
    :undoc-members:
    :show-inheritance:
 
+sisense.data.connection module
+------------------------------
+
+.. automodule:: sisense.data.connection
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 sisense.data.datamodel module
 -----------------------------
 
@@ -43,6 +51,7 @@ sisense.data.permission module
    :members:
    :undoc-members:
    :show-inheritance:
+
 
 Module contents
 ---------------

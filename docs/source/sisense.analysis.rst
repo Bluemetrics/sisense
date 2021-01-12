@@ -20,6 +20,7 @@ sisense.analysis.folder module
    :undoc-members:
    :show-inheritance:
 
+
 Module contents
 ---------------
 
