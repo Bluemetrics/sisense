@@ -29,6 +29,12 @@ class Sisense:
         return Build(api)
 
     @property
+    def connection(self) -> Connection:
+        """Start point for connection objects."""
+        api = self._api_v1()
+        return Connection(api)
+
+    @property
     def permission(self) -> Permission:
         """Start point for permission objects."""
         api = self._api_v09()
