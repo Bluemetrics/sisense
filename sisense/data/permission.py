@@ -18,9 +18,10 @@ class Permission(Resource):
         elasticube = elasticube if elasticube else self._elasticube
         content = self._api.get(f'elasticubes/localhost/{elasticube}/permissions')
 
-        permissions = [Permission(self._api, share, elasticube) for share in content['shares']]
-        permissions = {share.party: share for share in permissions}
-        permissions = permissions.values()
+        if 'shares' in content:
+            permissions = [Permission(self._api, share, elasticube) for share in content['shares']]
+        else:
+            permissions = []
 
         return list(permissions)
 
