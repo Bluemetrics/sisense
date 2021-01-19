@@ -7,6 +7,15 @@ import os
 
 class DashboardTestCase(TestCase):
 
+    def test_all(self):
+        samples = self.sisense.dashboard.all(datasourceTitle=self.config['elasticube'])
+
+        self.assertIsInstance(samples, list)
+
+        for sample in samples:
+            self.assertIsInstance(sample, Dashboard)
+            self.assertEqual(sample.datasource['title'], self.config['elasticube'])
+
     def test_get(self):
         dashboard = self.sisense.dashboard
         sample = dashboard.get(name=self.config['dashboard'])

@@ -4,6 +4,23 @@ import json
 
 class Dashboard(Resource):
 
+    def all(self, **kwargs) -> list:
+        """
+        Get all dashboards.
+
+        :param kwargs: Keywords optional arguments.
+            - parentFolder: (str) Folder ID.
+            - name: (str) Dashboard's name.
+            - datasourceTitle: (str) Elasticube title used as datasource.
+            - datasourceAddress: (str) Elasticube address.
+            - fields: (list) List of fields to retrieve for each dashboard.
+            - expand: (list) List of fields to be expanded (convert IDs to the actual object).
+        :return: (list) List of Dashboard objects.
+        """
+        content = self._api.get('dashboards', query=kwargs)
+        dashboards = [Dashboard(self._api, rjson) for rjson in content]
+        return dashboards
+
     def get(self, oid: str = None, name: str = None, folder: str = None) -> Resource:
         """
         Get the specified dashboard. At least, one of the parameters must be set.
