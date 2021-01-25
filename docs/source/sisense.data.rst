@@ -36,6 +36,14 @@ sisense.data.datasecurity module
    :undoc-members:
    :show-inheritance:
 
+sisense.data.elasticube module
+------------------------------
+
+.. automodule:: sisense.data.elasticube
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 sisense.data.hierarchy module
 -----------------------------
 

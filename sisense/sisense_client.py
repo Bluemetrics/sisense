@@ -29,6 +29,12 @@ class Sisense:
         return Build(api)
 
     @property
+    def elasticube(self) -> Elasticube:
+        """Start point for elasticube objects."""
+        api = self._api_v1()
+        return Elasticube(api)
+
+    @property
     def connection(self) -> Connection:
         """Start point for connection objects."""
         api = self._api_v1()
