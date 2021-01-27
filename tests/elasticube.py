@@ -14,6 +14,12 @@ class ElasticubeTestCase(TestCase):
         for cube in results:
             self.assertIsInstance(cube, Elasticube)
 
+    def test_get(self):
+        cube = self.sisense.elasticube.get(self.config['elasticube'])
+
+        self.assertIsInstance(cube, Elasticube)
+        self.assertEqual(cube.title, self.config['elasticube'])
+
 
 if __name__ == '__main__':
     unittest.main()
