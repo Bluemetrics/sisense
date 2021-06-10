@@ -1,4 +1,4 @@
-from urllib.parse import quote
+from urllib.parse import quote, urljoin
 from .utils import is_json
 import requests
 import os
@@ -38,7 +38,7 @@ class API:
         :return: (str) Full url.
         """
         uri = quote(uri)
-        return os.path.join(self._url, uri)
+        return urljoin(self._url, uri)
 
     def get(self, uri: str, query: dict = None, headers: dict = None) -> dict:
         """
