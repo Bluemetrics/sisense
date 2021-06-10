@@ -1,5 +1,4 @@
 from sisense.resource import Resource
-from .build import Build
 import json
 
 
@@ -55,7 +54,7 @@ class Datamodel(Resource):
         """Delete this data model."""
         self._api.delete(f'datamodels/{self.oid}')
 
-    def export_datamodel(self, filepath: str, full: bool = False):
+    def do_export(self, filepath: str, full: bool = False):
         """
         Export the datamodel.
 
@@ -64,7 +63,7 @@ class Datamodel(Resource):
         """
         self._download_full(filepath) if full else self._download_schema(filepath)
 
-    def import_datamodel(self, title: str, filepath: str, full: bool = False) -> Resource:
+    def do_import(self, title: str, filepath: str, full: bool = False) -> Resource:
         """
         Import a datamodel.
 
