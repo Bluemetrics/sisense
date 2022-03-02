@@ -18,7 +18,7 @@ class API:
         self._version = version
         self._token = token
 
-        self._url = os.path.join(host, 'api', version)
+        self._url = os.path.join(host, 'api', version) + '/'
 
     @property
     def host(self) -> str:
