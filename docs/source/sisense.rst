@@ -22,6 +22,14 @@ sisense.api module
    :undoc-members:
    :show-inheritance:
 
+sisense.cli module
+------------------
+
+.. automodule:: sisense.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 sisense.exception module
 ------------------------
 
