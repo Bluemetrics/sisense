@@ -1,8 +1,49 @@
 from sisense.resource import Resource
+from sisense.cli import CLI
+from sisense.api import API
 import json
 
 
 class Datamodel(Resource):
+
+    def __init__(self, api: API, rjson: dict = None):
+        """
+        Super for any API's resource.
+
+        :param api: (API) Used to make API's requests.
+        :param rjson: (dict) Resource representation.
+        """
+        super(Datamodel, self).__init__(api, rjson)
+        self._cli = CLI(api)
+
+    def list(self):
+        """
+        Get the following information for each elasticube:
+            - instance: Query instance
+            - id: elasticube's ID
+            - name: elasticube's name
+            - runtime_status: RUNNING or STOPPED
+            - index_size: LONG or SHORT
+            - path: path to the elasticube data on Linux
+            - shadow_path: (?)
+            - next_path: in case the elasticube is divided into two paths
+            - last_failure_message: if build failed, shows the last message
+
+        :return: (list) a list of Datamodel objects
+        """
+        response = self._cli.execute('elasticubes list')
+
+        lines = response['message'].split('\n')
+        keys = [key.strip().lower().replace(' ', '_') for key in lines[1].split('|')][1:-1]
+
+        result = []
+        for line in lines[3:-1]:
+            values = [value.strip() if len(value.strip()) else None for value in line.split('|')][1:-1]
+            rjson = dict(zip(keys, values))
+            datamodel = Datamodel(self._api, rjson)
+            result.append(datamodel)
+
+        return result
 
     def get(self, oid: str = None, title: str = None) -> Resource:
         """
@@ -53,6 +94,16 @@ class Datamodel(Resource):
     def delete(self):
         """Delete this data model."""
         self._api.delete(f'datamodels/{self.oid}')
+
+    def start(self):
+        """Start this data model."""
+        name = self.name if 'name' in self.json else self.title
+        self._cli.execute(f'elasticubes start -name "{name}"')
+
+    def stop(self):
+        """Stop this data model."""
+        name = self.name if 'name' in self.json else self.title
+        self._cli.execute(f'elasticubes stop -name "{name}"')
 
     def do_export(self, filepath: str, full: bool = False):
         """

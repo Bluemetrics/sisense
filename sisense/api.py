@@ -52,18 +52,21 @@ class API:
         """
         return self._request('GET', uri, headers=headers, params=query)
 
-    def post(self, uri: str, data: dict = None, query: dict = None, headers: dict = None) -> dict:
+    def post(self, uri: str, data = None, query: dict = None, headers: dict = None) -> dict:
         """
         Create a resource in the specified collection.
 
         :param uri: (str) Resource identifier.
-        :param data: (dict, default None) Resource representation as json.
+        :param data: (dict or str, default None) Resource representation as json or a command as string.
         :param query: (dict, default None) GET query parameters.
         :param headers: (dict, default None) Request headers.
 
         :return: (dict) Response
         """
-        return self._request('POST', uri, headers=headers, json=data, params=query)
+        if type(data) is dict:
+            return self._request('POST', uri, headers=headers, json=data, params=query)
+
+        return self._request('POST', uri, headers=headers, data=data, params=query)
 
     def put(self, uri: str, data: dict = None, headers: dict = None) -> dict:
         """
@@ -140,9 +143,10 @@ class API:
     def _headers(self, other: dict) -> dict:
         headers = {'authorization': self._token} if self._token else {}
 
-        headers.update(other if other else {})
         headers.update({'Accept': 'application/json'})
         headers.update({'Content-type': 'application/json'})
+
+        headers.update(other if other else {})
 
         return headers
 
