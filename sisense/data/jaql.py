@@ -20,6 +20,6 @@ class JAQL(Resource):
         response = self._api.post('datasources/x/jaql/csv', data=data, headers=headers)
 
         data = io.StringIO(response['message'])
-        dataframe = pd.read_csv(data, header=0, index_col=None)
+        dataframe = pd.read_csv(data, header=0, index_col=None, dtype=str)
 
         return dataframe
