@@ -144,7 +144,7 @@ class API:
         headers = {'authorization': self._token} if self._token else {}
 
         headers.update({'Accept': 'application/json'})
-        headers.update({'Content-type': 'application/json'})
+        # headers.update({'Content-type': 'application/json'})
 
         headers.update(other if other else {})
 

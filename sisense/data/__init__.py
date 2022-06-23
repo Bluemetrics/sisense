@@ -5,3 +5,4 @@ from .hierarchy import Hierarchy
 from .datasecurity import DataSecurity
 from .connection import Connection
 from .elasticube import Elasticube
+from .jaql import JAQL

@@ -1,8 +1,19 @@
 from sisense.resource import Resource
+from .widget import Widget
 import json
 
 
 class Dashboard(Resource):
+
+    @property
+    def widgets(self) -> list:
+        """
+        Get dashboard's widgets.
+
+        :return: (list) A list of widgets.
+        """
+        dashboard = self._expanded()
+        return [Widget(self._api, content) for content in dashboard.json['widgets']]
 
     def all(self, **kwargs) -> list:
         """
@@ -21,7 +32,7 @@ class Dashboard(Resource):
         dashboards = [Dashboard(self._api, rjson) for rjson in content]
         return dashboards
 
-    def get(self, oid: str = None, name: str = None, folder: str = None) -> Resource:
+    def get(self, oid: str = None, name: str = None, folder: str = None, expand: list = None) -> Resource:
         """
         Get the specified dashboard. At least, one of the parameters must be set.
         If found more than one dashboard with the same name, the first one is returned.
@@ -29,15 +40,20 @@ class Dashboard(Resource):
         :param oid: (str, default None) Dashboard's ID.
         :param name: (str, default None) Dashboard's name.
         :param folder: (str, default None) Parent folder's ID. Used when 'name' is set.
+        :param expand: (list, default None) List of fields that should be expanded (replace their IDs with actual objects). May be nested using the resource.subResource format.
         :return: (Dashboard) Dashboard, if found. None, otherwise.
         """
         if not oid and not name:
             raise ValueError('At least, one of the parameters must be set. Both oid and name are None.')
 
+        expand = ','.join(expand) if type(expand) is list else []
+        query = {'expand': expand}
+
         if oid:
-            content = self._api.get(f'dashboards/{oid}')
+            content = self._api.get(f'dashboards/{oid}', query=query)
         else:
-            content = self._api.get('dashboards', query={'name': name, 'parentFolder': folder})
+            query.update({'name': name, 'parentFolder': folder})
+            content = self._api.get('dashboards', query=query)
             content = content[0] if len(content) else None
 
         if not content:
@@ -95,10 +111,12 @@ class Dashboard(Resource):
         Export the current dashboard.
 
         :param filepath: (str) Where to save the file including file's name and extension.
-        :param filetype: (str, default 'dash') Type of export. Possible values: dash, png, pdf.
+        :param filetype: (str, default 'dash') Type of export. Possible values: dash.
 
         For more details on other parameters, check:
         <GET /dashboards/{id}/export/*> on https://sisense.dev/reference/rest/v1.html.
+
+        PNG and PDF export is currently not supported.
         """
         content = self._api.get(f'dashboards/{self.oid}/export/{filetype}', query=kwargs)
         dashboard = Dashboard(self._api, content)
@@ -111,3 +129,12 @@ class Dashboard(Resource):
     def delete(self):
         """Delete the current dashboard."""
         self._api.delete(f'dashboards/{self.oid}')
+
+    def _expanded(self) -> Resource:
+        """
+        Get dashboard's expanded information, including widgets.
+
+        :return: (Dashboard) The expanded dashboard.
+        """
+        content = self._api.get(f'dashboards/{self.oid}/export/dash')
+        return Dashboard(self._api, content)

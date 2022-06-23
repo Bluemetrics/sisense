@@ -82,6 +82,12 @@ class Sisense:
         api = self._api_v1()
         return Folder(api)
 
+    @property
+    def jaql(self) -> JAQL:
+        """Start point for JAQL objects."""
+        api = self._api_v09()
+        return JAQL(api)
+
     def _api_v2(self):
         return API(self._host, 'v2', self._token)
 
