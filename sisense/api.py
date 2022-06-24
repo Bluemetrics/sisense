@@ -1,7 +1,6 @@
 from urllib.parse import quote, urljoin
 from .utils import is_json
 import requests
-import os
 
 
 class API:
@@ -18,7 +17,7 @@ class API:
         self._version = version
         self._token = token
 
-        self._url = os.path.join(host, 'api', version) + '/'
+        self._url = urljoin(host, f'api/{version}/')
 
     @property
     def host(self) -> str:
