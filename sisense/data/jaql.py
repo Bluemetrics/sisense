@@ -1,12 +1,10 @@
 from sisense.resource import Resource
-import pandas as pd
 import json
-import io
 
 
 class JAQL(Resource):
 
-    def to_csv(self, datasource, metadata: list) -> pd.DataFrame:
+    def to_csv(self, datasource, metadata: list) -> str:
         """
         Execute JAQL and return the result as CSV.
 
@@ -19,7 +17,5 @@ class JAQL(Resource):
 
         response = self._api.post('datasources/x/jaql/csv', data=data, headers=headers)
 
-        data = io.StringIO(response['message'])
-        dataframe = pd.read_csv(data, header=0, index_col=None, dtype=str)
-
-        return dataframe
+        data = response['message']
+        return data
