@@ -2,7 +2,7 @@ from sisense.resource import Resource
 import json
 
 
-class JAQL(Resource):
+class Datasource(Resource):
 
     def to_csv(self, datasource, metadata: list) -> str:
         """
@@ -19,3 +19,15 @@ class JAQL(Resource):
 
         data = response['message']
         return data
+
+    def from_sql(self, datasource, query: str) -> dict:
+        """
+        Execute a SQL statement in the specified datasource.
+
+        :param datasource: (str or dict) Elasticube name or datasource representation as JSON.
+        :param query: (str) A SQL statement.
+        :return: (dict) {"headers": list, "values": list of lists}
+        """
+        datasource_title = datasource['title'] if type(datasource) is dict else datasource
+        response = self._api.get(f'datasources/{datasource_title}/sql', query={'query': query})
+        return response

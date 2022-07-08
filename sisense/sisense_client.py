@@ -83,10 +83,10 @@ class Sisense:
         return Folder(api)
 
     @property
-    def jaql(self) -> JAQL:
-        """Start point for JAQL objects."""
+    def datasource(self) -> Datasource:
+        """Start point for Datasource objects."""
         api = self._api_v09()
-        return JAQL(api)
+        return Datasource(api)
 
     def _api_v2(self):
         return API(self._host, 'v2', self._token)
