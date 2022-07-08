@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="sisense",
-    version="0.1.1",
+    version="0.1.3",
     author="Bluemetrics",
     author_email="equipe@bluemetrics.com.br",
     description="Sisense API interface in Python.",

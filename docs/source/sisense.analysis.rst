@@ -20,6 +20,14 @@ sisense.analysis.folder module
    :undoc-members:
    :show-inheritance:
 
+sisense.analysis.widget module
+------------------------------
+
+.. automodule:: sisense.analysis.widget
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

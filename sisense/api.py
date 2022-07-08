@@ -89,7 +89,7 @@ class API:
 
         :return: (dict) Response
         """
-        return self._request('PATCH', uri, headers=headers, json=data)
+        return self._request('PATCH', uri, headers=headers, data=data)
 
     def delete(self, uri: str, query: dict = None, headers: dict = None) -> dict:
         """

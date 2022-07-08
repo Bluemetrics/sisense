@@ -38,6 +38,22 @@ class Folder(Resource):
         content = self._api.post('folders', data=data)
         return Folder(self._api, content)
 
+    def update(self, **kwargs):
+        """
+        Update the current folder.
+
+        :param name: (str, named parameter) The new folder name.
+        :param parentId: (str, named parameter) The new parent folder ID.
+        :param owner: (str, named parameter) The new owner of the folder, a user ID.
+        """
+        data = {
+            'name': kwargs.get('name', self.name),
+            'parentId': kwargs.get('parentId', self.parentId),
+            'owner': kwargs.get('owner', self.owner)
+        }
+
+        self._api.patch(f'folders/{self.oid}', data=data)
+
     def delete(self):
         """Delete the current folder."""
         self._api.delete(f'folders/{self.oid}')
