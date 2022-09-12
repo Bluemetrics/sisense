@@ -160,7 +160,7 @@ class API:
         self._handle_request_error(response)
 
         if len(response.text):
-            content = response.json() if is_json(response.text) else {'message': response.text}
+            content = response.json() if is_json(response.text) else {'message': response.content}
         else:
             content = {}
 
