@@ -51,7 +51,7 @@ class API:
         """
         return self._request('GET', uri, headers=headers, params=query)
 
-    def post(self, uri: str, data = None, query: dict = None, headers: dict = None) -> dict:
+    def post(self, uri: str, data=None, query: dict = None, headers: dict = None) -> dict:
         """
         Create a resource in the specified collection.
 
@@ -62,7 +62,7 @@ class API:
 
         :return: (dict) Response
         """
-        if type(data) is dict:
+        if type(data) in [dict, list]:
             return self._request('POST', uri, headers=headers, json=data, params=query)
 
         return self._request('POST', uri, headers=headers, data=data, params=query)
@@ -89,7 +89,7 @@ class API:
 
         :return: (dict) Response
         """
-        return self._request('PATCH', uri, headers=headers, data=data)
+        return self._request('PATCH', uri, headers=headers, json=data)
 
     def delete(self, uri: str, query: dict = None, headers: dict = None) -> dict:
         """

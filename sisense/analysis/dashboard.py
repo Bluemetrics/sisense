@@ -73,7 +73,6 @@ class Dashboard(Resource):
         For more information, check "PATCH /dashboards/{id}" on https://sisense.dev/reference/rest/v1.html.
         """
         data = kwargs
-        data['oid'] = self.oid
 
         content = self._api.patch(f'dashboards/{self.oid}', data=data)
         self.json = content
