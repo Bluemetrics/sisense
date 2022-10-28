@@ -127,6 +127,46 @@ class Datamodel(Resource):
         self._upload_full(title, filepath) if full else self._upload_schema(title, filepath)
         return self.get(title=title)
 
+    def get_latest_build_log(self, start_from: int = 1):
+        """
+        Get datamodel's latest build log.
+
+        :param start_from: (int, default 1) From log sequence number.
+        :return: (list) Logs. Example:
+            [{
+                "timestamp": "2022-10-25T19:03:12.069Z",
+                "verbosity": "Info",
+                "type": "buildFlow",
+                "message": "Waiting in queue",
+                "trackId": "77d24bba-c7f8-4c47-9de9-a64bc5a7e746",
+                "contextRef": null,
+                "serverId": "7c3f73dd-0b38-48dc-9347-c78811bd80c4",
+                "serverName": "localhost",
+                "cubeId": "Bot",
+                "sessionId": "0c2152c0-d716-4579-895e-1f24f3aa8670",
+                "buildSeq": 1,
+                "typeValue": {
+                    "tableName": null,
+                    "columnName": null,
+                    "trackingItemEventId": null,
+                    "title": "Waiting in queue",
+                    "description": "Waiting in queue",
+                    "additionalInfo": null,
+                    "__typename": "BuildLogGeneralInfoTypeValue"
+                },
+                "serverTime": "2022-10-28T17:42:00.795Z",
+                "__typename": "BuildLogEntry"
+            }, ...]
+        """
+        data = {
+            'query': "query ($elasticubeOid: UUID!, $fromSequenceNumber: Int) {  getRecentBuildLogs(elasticubeOid: $elasticubeOid, fromSequenceNumber: $fromSequenceNumber) {    ...buildLogsData    __typename  }}fragment buildLogsData on BuildLogEntry {  timestamp  verbosity  type  message  trackId  contextRef  serverId  serverName  cubeId  sessionId  buildSeq  typeValue {    tableName    columnName    ... on BuildLogGeneralFailureTypeValue {      trackingItemEventId      title      description      additionalInfo      message      source      __typename    }    ... on BuildLogGeneralInfoTypeValue {      trackingItemEventId      title      description      additionalInfo      __typename    }    ... on BuildLogIndexingTypeValue {      dateTimeNowInTicks      chunkSize      totalToIndex      currentIndexed      completionState      startTime      endTime      cloudName      traceLevel      __typename    }    ... on BuildLogChunkTypeValue {      trackingItemEventId      title      description      additionalInfo      countRecords      totalRecords      chunkID      __typename    }    ... on BuildLogSqlBasedTypeValue {      trackingItemEventId      title      description      additionalInfo      sql      __typename    }    ... on BuildLogStartEndTypeValue {      trackingItemEventId      title      description      additionalInfo      physicalSize      __typename    }    ... on BuildLogBuildFlowTypeValue {      dependencies {        sortedDependencies {          name          type          table          dependencies          __typename        }        __typename      }      __typename    }    __typename  }  serverTime  __typename}",
+            'variables': {'elasticubeOid': self.oid, 'fromSequenceNumber': start_from},
+            'operationName': None
+        }
+
+        content = self._api.post('ecm', data=data)
+        return content['data']['getRecentBuildLogs']
+
     def _download_schema(self, filepath: str):
         query = {'datamodelId': self.oid, 'type': 'schema-latest'}
         content = self._api.get('datamodel-exports/schema', query=query)
