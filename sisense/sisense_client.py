@@ -88,6 +88,12 @@ class Sisense:
         api = self._api_v09()
         return Datasource(api)
 
+    @property
+    def grafana(self) -> Grafana:
+        """Start point for Grafana objects."""
+        api = API(self._host, '', self._token, prefix='app')
+        return Grafana(api)
+
     def _api_v2(self):
         return API(self._host, 'v2', self._token)
 

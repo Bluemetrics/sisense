@@ -5,11 +5,20 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
    sisense.admin.auth
 
 Submodules
 ----------
+
+sisense.admin.grafana module
+----------------------------
+
+.. automodule:: sisense.admin.grafana
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 sisense.admin.group module
 --------------------------
@@ -26,7 +35,6 @@ sisense.admin.user module
    :members:
    :undoc-members:
    :show-inheritance:
-
 
 Module contents
 ---------------

@@ -5,19 +5,20 @@ import requests
 
 class API:
 
-    def __init__(self, host: str, version: str, token: str = None):
+    def __init__(self, host: str, version: str, token: str = None, prefix: str = 'api'):
         """
         Manage server's requests and responses.
 
         :param host: (str) Domain name server.
         :param version: (str) API's version. Ex.: 'v1'.
         :param token: (str, default None) API's access token.
+        :param prefix: (str, default 'api') URI prefix. Possible values: api, app.
         """
         self._host = host
         self._version = version
         self._token = token
 
-        self._url = urljoin(host, f'api/{version}/')
+        self._url = urljoin(host, f'{prefix}/{version}/')
 
     @property
     def host(self) -> str:
