@@ -20,6 +20,21 @@ class Datasource(Resource):
         data = response['message']
         return data
 
+    def jaql(self, datasource: [dict, str], metadata: list) -> dict:
+        """
+        Execute JAQL on datasource.
+
+        :param datasource: (str or dict) Elasticube name or datasource representation as JSON.
+        :param metadata: (list) A list of JAQL representations as dict. See https://sisense.dev/reference/jaql/ for details.
+        :return: returns a dictionary with the structure of a widget expected in headers, metadata, datasource, values.
+        """
+        data = {'datasource': datasource, 'metadata': metadata}
+        headers = {'Accept': '*/*'}
+
+        response = self._api.post('datasources/x/jaql', data=data, headers=headers)
+
+        return response
+
     def from_sql(self, datasource, query: str) -> dict:
         """
         Execute a SQL statement in the specified datasource.
